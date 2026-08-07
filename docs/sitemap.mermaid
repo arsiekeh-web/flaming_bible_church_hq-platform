@@ -1,0 +1,53 @@
+graph TD
+    Home["Home<br/>(Public)"]
+
+    Home --> About["About / Leadership<br/>(Public)"]
+    About --> AboutGO["General Overseers<br/>Bishop Dr. F.A.S. Koroma<br/>Rev. Dr. Lady P. Koroma"]
+    About --> AboutHP["Head Pastor<br/>Rev. Olamide Macculey"]
+
+    Home --> VisitUs["Visit Us<br/>Service times + address<br/>(Public)"]
+
+    Home --> Events["Events Calendar<br/>(Public)"]
+    Events --> EventDetail["Event Detail Page<br/>(Public)"]
+    EventDetail --> RSVPGate{"RSVP options"}
+    RSVPGate -->|Guest, no account| GuestInterest["I'm Interested Form<br/>name + phone<br/>(Public)"]
+    GuestInterest --> GuestConfirm["Guest Confirmation<br/>(Public)"]
+    RSVPGate -->|Member RSVP| LoginCheck{"Logged in?"}
+    LoginCheck -->|No| Login["Login / Register"]
+    LoginCheck -->|Yes| RSVPConfirm["RSVP Confirmation<br/>(Member)"]
+    Events --> Reverence["Reverence<br/>Flagship event page<br/>(Public)"]
+    Reverence --> ShopReverence["Shop → Reverence Merch"]
+
+    Home --> Sermons["Sermon Archive<br/>(Public)"]
+    Sermons --> SermonFilter["Live filter: speaker / series / date<br/>no search button, filters on select<br/>(Public)"]
+    SermonFilter --> SermonDetail["Sermon Player Page<br/>(Public)"]
+
+    Home --> Groups["Church Groups Directory<br/>Public browse<br/>(Public)"]
+    Groups --> GroupDetail["Group Detail<br/>(Public browse)"]
+    GroupDetail --> JoinGate{"Logged in?"}
+    JoinGate -->|No| Login
+    JoinGate -->|Yes| JoinConfirm["Join Confirmation<br/>(Member)"]
+    Groups --> YDY["YDY Page<br/>(Public browse — mini-site)"]
+    YDY --> YDYAbout["Tab: About"]
+    YDY --> YDYEvents["Tab: Events"]
+    YDY --> YDYShop["Tab: Shop → YDY Merch"]
+    YDY --> YDYContact["Tab: Contact"]
+
+    Home --> Shop["Shop<br/>Browse only, no checkout<br/>(Public)"]
+    Shop --> ShopChurch["Church Merch"]
+    Shop --> ShopReverence
+    Shop --> ShopGroup["Group Merch (e.g. YDY)"]
+
+    Home --> Login
+    Login --> Register["Create Account"]
+    Login --> MemberPortal["Member Portal<br/>(Member, authenticated)"]
+
+    MemberPortal --> MyRSVPs["My RSVPs"]
+    MemberPortal --> Groups
+    MemberPortal --> MyProfile["My Profile"]
+
+    Login --> AdminDash["Admin Dashboard<br/>(Staff/Admin, authenticated)<br/>documented, not in clickable demo"]
+    AdminDash --> ManageEvents["Manage Events"]
+    AdminDash --> ManageSermons["Upload / Tag Sermons"]
+    AdminDash --> ManageGroups["Manage Group Rosters<br/>can add members without their login"]
+    AdminDash --> ManageMembers["Manage Member Accounts"]

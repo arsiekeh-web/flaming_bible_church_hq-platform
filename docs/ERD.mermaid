@@ -1,0 +1,104 @@
+erDiagram
+    MEMBER ||--o{ RSVP : submits
+    MEMBER }o--o{ CHURCH_GROUP : "joins via"
+    MEMBER ||--o{ MEMBER_GROUP : has
+    CHURCH_GROUP ||--o{ MEMBER_GROUP : has
+    EVENT ||--o{ RSVP : receives
+    EVENT ||--o{ EVENT_INTEREST : receives
+    SERMON }o--|| SERIES : "belongs to"
+    SERMON }o--|| SPEAKER : "delivered by"
+    ADMIN_ROLE ||--o{ MEMBER : "assigned to"
+
+    MEMBER {
+        uuid id PK
+        string full_name
+        string email UK
+        string password_hash
+        string role FK "visitor/member/staff"
+        datetime created_at
+        boolean is_active
+    }
+
+    ADMIN_ROLE {
+        uuid id PK
+        string role_name "staff/admin"
+        json permissions
+    }
+
+    EVENT {
+        uuid id PK
+        string title
+        text description
+        datetime start_time
+        datetime end_time
+        string location
+        int capacity
+        boolean members_only
+        boolean rsvp_required "false for routine services; true only when headcount is needed for planning/resources"
+        boolean is_flagship "true for events like Reverence with a dedicated page"
+        string dedicated_page_slug "nullable, only set when is_flagship"
+        uuid created_by FK
+    }
+
+    RSVP {
+        uuid id PK
+        uuid member_id FK
+        uuid event_id FK
+        string status "going/waitlist/cancelled"
+        datetime rsvp_at
+    }
+
+    EVENT_INTEREST {
+        uuid id PK
+        uuid event_id FK
+        string full_name
+        string phone
+        datetime submitted_at
+        string note "guest path, no account/login required"
+    }
+
+    SERMON {
+        uuid id PK
+        string title
+        uuid speaker_id FK
+        uuid series_id FK
+        date sermon_date
+        string video_url
+        int duration_seconds
+        text description
+        boolean published
+    }
+
+    SPEAKER {
+        uuid id PK
+        string name
+        text bio
+    }
+
+    SERIES {
+        uuid id PK
+        string title
+        text description
+        date start_date
+        date end_date
+    }
+
+    CHURCH_GROUP {
+        uuid id PK
+        string name
+        text description
+        string meeting_schedule
+        uuid leader_id FK
+        int capacity
+        boolean has_dedicated_page "true for groups like YDY with a fuller page"
+        string page_slug "nullable, only set when has_dedicated_page"
+    }
+
+    MEMBER_GROUP {
+        uuid id PK
+        uuid member_id FK
+        uuid group_id FK
+        string role_in_group "member/leader"
+        datetime joined_at
+        string note "staff can create this row directly for a member who has never logged in"
+    }
