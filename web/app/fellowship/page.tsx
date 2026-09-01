@@ -1,7 +1,4 @@
-import Link from 'next/link'
 import Image from 'next/image'
-import { createClient } from '@/lib/supabase/server'
-import { joinFellowship } from './actions'
 
 const COORDINATORS = [
   { name: 'Rev. Benjamin Tucker', role: 'Present Coordinator', photo: '/fellowship/ydy/coordinators/benjamin-tucker.jpg' },
@@ -16,39 +13,18 @@ const EXECUTIVES = [
   { name: 'Faith Coker', role: 'Treasurer', phone: '080725315', photo: '/fellowship/ydy/executives/faith-coker.jpg' },
 ]
 
-const YDY_APP_LINK = 'https://ydy-link-life.base44.app'
-
 export const metadata = {
-  title: 'Fellowship | Flaming Evangelical Ministries HQ',
+  title: 'Fellowship — YDY',
+  description:
+    'The Young Dynamic Youth Fellowship (YDY) at Flaming Evangelical Ministries HQ, Ascension Town, Freetown — formed 1998/99 to bridge Children\'s Church and Youth Fellowship. Meet our coordinators and executives.',
 }
 
-export default async function FellowshipPage({
+export default function FellowshipPage({
   searchParams,
 }: {
-  searchParams: { joined?: string; error?: string; tab?: string }
+  searchParams: { tab?: string }
 }) {
-  const supabase = await createClient()
-
-  // YDY is the only fellowship under this tab, looked up by its page_slug
-  // rather than a hardcoded id, so this page keeps working even if the
-  // group's database row changes.
-  const { data: group } = await supabase
-    .from('church_groups')
-    .select('id, name, description, meeting_schedule')
-    .eq('page_slug', 'ydy')
-    .single()
-
-  if (!group) {
-    return (
-      <main className="section">
-        <p>YDY isn&apos;t set up in the database yet. Add a row to <code>church_groups</code> with <code>page_slug = &apos;ydy&apos;</code>.</p>
-      </main>
-    )
-  }
-
   const activeTab = searchParams.tab ?? 'about'
-  const returnPath = '/fellowship'
-  const boundJoin = joinFellowship.bind(null, group.id, returnPath)
 
   return (
     <main>
@@ -74,23 +50,12 @@ export default async function FellowshipPage({
           <span className="pill pill-member" style={{ display: 'inline-block', width: 'fit-content' }}>
             Fellowship
           </span>
-          <h1 style={{ color: '#fff', fontSize: 30, margin: '10px 0 4px' }}>{group.name}</h1>
-          <p style={{ color: '#cfd8ee', fontSize: 12.5 }}>Part of Flaming Evangelical Ministries HQ — same login, same account.</p>
+          <h1 style={{ color: '#fff', fontSize: 30, margin: '10px 0 4px' }}>Young Dynamic Youth Fellowship (YDY)</h1>
+          <p style={{ color: '#cfd8ee', fontSize: 12.5 }}>Ascension Town Young Dynamic Youth Fellowship</p>
         </div>
       </div>
 
       <div className="section">
-        {searchParams.joined && (
-          <div style={{ background: 'rgba(198,149,47,.12)', border: '1px solid var(--gold)', padding: '12px 16px', borderRadius: 4, marginBottom: 20, fontSize: 13.5 }}>
-            You&apos;re in! The group leader will be notified.
-          </div>
-        )}
-        {searchParams.error && (
-          <div style={{ background: '#fdecec', color: '#a00', padding: '12px 16px', borderRadius: 4, marginBottom: 20, fontSize: 13.5 }}>
-            {searchParams.error}
-          </div>
-        )}
-
         <div style={{ display: 'flex', gap: 6, borderBottom: '2px solid var(--line)', marginBottom: 24, flexWrap: 'wrap' }}>
           <Tab href="/fellowship?tab=about" active={activeTab === 'about'}>
             About
@@ -108,30 +73,35 @@ export default async function FellowshipPage({
 
         {activeTab === 'about' && (
           <div>
-            {group.meeting_schedule && <div className="meta" style={{ marginBottom: 14 }}>🗓 {group.meeting_schedule}</div>}
-            {group.description && <p style={{ lineHeight: 1.7, marginBottom: 20 }}>{group.description}</p>}
+            <p style={{ lineHeight: 1.8, marginBottom: 16, maxWidth: 720, color: 'var(--gray)' }}>
+              The Young Dynamic Youth Fellowship (YDY) was formed in 1998/1999 to bridge the gap between the
+              Children&apos;s Church and the Youth Fellowship. At that time, children graduated straight from
+              the children&apos;s church into the youth fellowship around age 15, and the age gap between
+              younger and older members made it difficult to relate without misunderstandings. Younger ones
+              were not yet matured enough to handle the situations of the Youth Fellowship, so the Church
+              formed YDY to bridge it — a place for members to grow until they are matured enough to join the
+              Youth Fellowship.
+            </p>
+            <p style={{ lineHeight: 1.8, marginBottom: 20, maxWidth: 720, color: 'var(--gray)' }}>
+              YDY was accomplished with the help of Children&apos;s Church teachers who served as coordinators
+              in its first years. The current theme of YDY is drawn from John 4:34 —{' '}
+              <em>&ldquo;My meat is to do the will of him that sent me, and to finish his work.&rdquo;</em>
+            </p>
 
-            <div style={{ border: '1px solid var(--line)', borderRadius: 'var(--radius)', padding: 20, marginBottom: 20, maxWidth: 480 }}>
-              <p style={{ fontWeight: 600, marginBottom: 6, fontSize: 14 }}>YDY Members App</p>
-              <p style={{ color: 'var(--gray)', fontSize: 13.5, lineHeight: 1.6, marginBottom: 12 }}>
-                Catch up on bible studies you missed, read summarized notes, and stay on top of activities — for YDY members only.
+            <div style={{ border: '1px solid var(--line)', borderRadius: 'var(--radius)', padding: 20, marginBottom: 8, maxWidth: 480 }}>
+              <p style={{ fontWeight: 600, marginBottom: 6, fontSize: 14 }}>Join YDY</p>
+              <p style={{ color: 'var(--gray)', fontSize: 13.5, lineHeight: 1.6 }}>
+                Speak with one of the coordinators or executives listed under the Coordinators and Contact
+                tabs to join, or come along to a meeting.
               </p>
-              <a href={YDY_APP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ display: 'inline-block' }}>
-                Open YDY App
-              </a>
             </div>
-
-            <form action={boundJoin}>
-              <button type="submit" className="btn btn-crimson">
-                Join YDY
-              </button>
-            </form>
           </div>
         )}
 
         {activeTab === 'events' && (
           <p style={{ color: 'var(--gray)', fontSize: 14 }}>
-            No YDY-specific events listed yet. Once staff tag events for this group in the admin dashboard, they&apos;ll appear here.
+            No YDY-specific events listed right now. Check the main Events page or follow our Facebook and
+            YouTube for announcements.
           </p>
         )}
 
@@ -190,7 +160,7 @@ function PersonCard({
 
 function Tab({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
   return (
-    <Link
+    <a
       href={href}
       style={{
         padding: '10px 16px',
@@ -199,9 +169,10 @@ function Tab({ href, active, children }: { href: string; active: boolean; childr
         color: active ? 'var(--crimson)' : 'var(--gray)',
         borderBottom: active ? '2px solid var(--crimson)' : '2px solid transparent',
         marginBottom: -2,
+        display: 'inline-block',
       }}
     >
       {children}
-    </Link>
+    </a>
   )
 }
