@@ -1,26 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { createClient } from '@/lib/supabase/server'
 import NavLinks from './NavLinks'
 
-// Server Component — reads the real session on every request, so the
-// Login/Portal state you see is real, not a client-side illusion.
-export default async function Nav() {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-
-  const authLink = user ? (
-    <Link href="/portal" className="btn btn-outline">
-      My Portal
-    </Link>
-  ) : (
-    <Link href="/login" className="btn btn-gold">
-      Log In
-    </Link>
-  )
-
+export default function Nav() {
   return (
     <div className="nav">
       <Link href="/" className="nav-brand">
@@ -30,7 +12,7 @@ export default async function Nav() {
         </div>
       </Link>
 
-      <NavLinks authLink={authLink} />
+      <NavLinks />
     </div>
   )
 }

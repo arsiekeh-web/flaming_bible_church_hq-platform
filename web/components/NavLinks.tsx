@@ -6,12 +6,12 @@ import { useState } from 'react'
 const LINKS = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/sermons', label: 'Sermons' },
+  { href: '/sermons', label: 'Watch & Listen' },
   { href: '/events', label: 'Events' },
   { href: '/fellowship', label: 'Fellowship' },
 ]
 
-export default function NavLinks({ authLink }: { authLink: React.ReactNode }) {
+export default function NavLinks() {
   const [open, setOpen] = useState(false)
 
   return (
@@ -24,7 +24,6 @@ export default function NavLinks({ authLink }: { authLink: React.ReactNode }) {
           </Link>
         ))}
       </div>
-      <div className="nav-desktop-auth">{authLink}</div>
 
       {/* Mobile hamburger — hidden on desktop via .nav-toggle CSS */}
       <button
@@ -43,7 +42,6 @@ export default function NavLinks({ authLink }: { authLink: React.ReactNode }) {
               {l.label}
             </Link>
           ))}
-          <div style={{ marginTop: 8 }}>{authLink}</div>
         </div>
       )}
     </>
