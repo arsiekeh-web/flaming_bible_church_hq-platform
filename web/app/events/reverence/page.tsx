@@ -2,7 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Reverence | Flaming Evangelical Ministries HQ',
+  title: 'Reverence — 5th Anniversary',
+  description:
+    'Reverence is the annual worship night of Flaming Evangelical Ministries International, hosted by Rev. Dr. Lady Patricia Koroma — five years of directing worship to the Lord in Freetown, Sierra Leone.',
+  openGraph: {
+    images: [{ url: '/events/reverence/hero.jpg', width: 1200, height: 630, alt: 'Reverence 5th Anniversary worship night' }],
+  },
 }
 
 export default function ReverencePage() {
@@ -33,8 +38,8 @@ export default function ReverencePage() {
           </div>
           <h1 style={{ color: '#fff', fontSize: 34 }}>Reverence</h1>
           <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5, maxWidth: 560 }}>
-            &ldquo;Hallelujah, the Omnipotent God Reigns&rdquo; — a night of worship marking five years of Flaming
-            Evangelical Ministries International.
+            A worship night marking five years of Reverence, directing worship to the Lord and celebrating
+            God&apos;s grace over Flaming Evangelical Ministries International.
           </p>
         </div>
       </div>
@@ -50,21 +55,36 @@ export default function ReverencePage() {
       {/* --- About --- */}
       <div id="about" className="section">
         <h2 style={{ fontSize: 22, marginBottom: 14 }}>About Reverence</h2>
-        <p style={{ lineHeight: 1.8, maxWidth: 720, color: 'var(--gray)' }}>
-          [Placeholder — real event description needed from the events team. Suggested structure: what Reverence
-          is, why it happens annually, this year&apos;s 5th Anniversary theme, and who ministered on the night —
-          worship team, choir, and guest speakers.]
+        <p style={{ lineHeight: 1.8, maxWidth: 720, color: 'var(--gray)', marginBottom: 18 }}>
+          Reverence was born out of a genuine desire to worship and exalt the Lord. What began as a single
+          occasion has grown from the cradle into a national event, drawing worshippers, ministers, and
+          musicians from across Sierra Leone and the diaspora. Reverence creates an atmosphere where believers
+          can interact with their Creator in a form of worship — the vertical coming together with the
+          horizontal, so the Lord can be worshipped in spirit and in truth.
         </p>
+        <p style={{ lineHeight: 1.8, maxWidth: 720, color: 'var(--gray)', marginBottom: 18 }}>
+          Reverence is hosted by Rev. Dr. Lady Patricia Koroma, with Bishop Dr. Frederick Abu Sidique Suaiman
+          Koroma as visioneer. Each year the programme has grown in attendance, attracting key figures across
+          Sierra Leonean society who are engaged in praise and worship, and closing with a memorable final
+          hour of ministration.
+        </p>
+        <p style={{ fontFamily: 'var(--font-fraunces)', fontStyle: 'italic', color: 'var(--crimson)', fontSize: 16, marginBottom: 18 }}>
+          &ldquo;With Reverence, we worship God. We create an atmosphere where we can worship God in spirit
+          and in truth — not something born out of mechanical nature, but something born out of a genuine
+          desire of worship.&rdquo;
+        </p>
+        <p style={{ fontSize: 13, color: 'var(--gray)' }}>— Rev. Dr. Lady Patricia Koroma, Host of Reverence</p>
       </div>
 
       {/* --- Gallery --- */}
       <div id="gallery" className="section" style={{ paddingTop: 0 }}>
         <h2 style={{ fontSize: 22, marginBottom: 20 }}>Moments from the Night</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+          <GalleryImage src="/events/reverence/congregation-2025.jpg" alt="Ministers and congregation gathered for Reverence" />
+          <GalleryImage src="/events/reverence/award-night.jpg" alt="Recognition and appreciation on the Reverence stage" />
           <GalleryImage src="/events/reverence/singer.jpg" alt="Worship leader ministering on stage" />
           <GalleryImage src="/events/reverence/choir-1.jpg" alt="Choir and worship team leading praise" />
           <GalleryImage src="/events/reverence/worship-team.jpg" alt="Worship team in full praise" />
-          <GalleryImage src="/events/reverence/choir-2.jpg" alt="Choir raising hands in worship" />
           <GalleryImage src="/events/reverence/congregation.jpg" alt="Congregation gathered for Reverence" />
         </div>
       </div>
@@ -73,9 +93,8 @@ export default function ReverencePage() {
       <div id="shop" className="section" style={{ paddingTop: 0 }}>
         <h2 style={{ fontSize: 22, marginBottom: 14 }}>Shop</h2>
         <div style={{ border: '1px dashed var(--line)', borderRadius: 4, padding: 32, textAlign: 'center', color: 'var(--gray)', fontSize: 14, maxWidth: 720 }}>
-          Merchandise for Reverence isn&apos;t listed yet. [Placeholder — add product name, price, and photo here
-          once items — e.g. anniversary t-shirts, wristbands, event DVDs — are ready to sell. This section can
-          later connect to a real checkout if the church wants online payment.]
+          Merchandise for Reverence isn&apos;t listed yet. Anniversary t-shirts, wristbands, and event
+          keepsakes will appear here once available.
         </div>
       </div>
     </main>
