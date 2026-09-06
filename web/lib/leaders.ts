@@ -13,7 +13,7 @@ export const LEADERS: Record<string, Leader & { photo: string }> = {
     photo: '/about/patricia-solo.png',
     name: 'Rev. Dr. Lady Patricia Koroma',
     role: 'General Overseer',
-    bio: "Rev. Dr. Lady Patricia Koroma serves alongside Bishop Dr. Frederick Abu Sidique Koroma as General Overseer of Flaming Evangelical Ministries International. She hosts Reverence, the Ministry's annual worship celebration, and is known within the Ministry as a dedicated worshipper whose personal devotion shapes the vision behind the programme. [More biography detail to be added as it becomes available.]",
+    bio: "Rev. Dr. Lady Patricia Koroma serves alongside Bishop Dr. Frederick Abu Sidique Koroma as General Overseer of Flaming Evangelical Ministries International. She hosts Reverence, the Ministry's annual worship celebration, and is known within the Ministry as a dedicated worshipper whose personal devotion shapes the vision behind the programme.",
   },
   pastor: {
     photo: '/about/head-pastor.jpg',
