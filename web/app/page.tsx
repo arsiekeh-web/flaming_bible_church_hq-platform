@@ -22,10 +22,10 @@ export default function Home() {
         }}
       >
         <Image
-          src="/home-worship.jpg"
-          alt="Worship at Flaming Evangelical Ministries HQ"
+          src="/about/general-overseers-joint.jpg"
+          alt="Bishop Dr. Frederick Abu Sidique Koroma and Rev. Dr. Lady Patricia Koroma, General Overseers of Flaming Evangelical Ministries HQ"
           fill
-          style={{ objectFit: 'cover', objectPosition: 'center 25%' }}
+          style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
           priority
         />
         <div

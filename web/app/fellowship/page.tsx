@@ -1,9 +1,16 @@
 import Image from 'next/image'
+import { LeaderCard } from '@/components/LeaderModal'
 
 const COORDINATORS = [
   { name: 'Rev. Benjamin Tucker', role: 'Present Coordinator', photo: '/fellowship/ydy/coordinators/benjamin-tucker.jpg' },
-  { name: 'Mrs Patricia Amara', role: 'Present Coordinator', photo: '/fellowship/ydy/coordinators/patricia-amara.jpg' },
 ]
+
+const PATRICIA_AMARA = {
+  name: 'Patricia Amara',
+  role: 'Present Coordinator',
+  photo: '/fellowship/ydy/coordinators/patricia-amara.jpg',
+  bio: 'Patricia Amara is a fervent lover of God and Christ. She works as a procurement, supply chain, and logistics professional, holding an MSc in Supply Chain, Procurement and Logistics from the University of Salford and a CIPS diploma from the Chartered Institute of Procurement & Supply. She has served as YDY coordinator for nine years, with a particular passion for mentoring young people, and also worships in the church choir. Outside the church, she runs an online ministry, Woman of Purpose! My Smile My Brand, through which she preaches the Gospel and works to encourage others and build their faith and hope.',
+}
 
 const EXECUTIVES = [
   { name: 'Julian Palmer', role: 'President', phone: '077375815', photo: '/fellowship/ydy/executives/julian-palmer.jpg' },
@@ -11,6 +18,50 @@ const EXECUTIVES = [
   { name: 'Joseph Fofanah', role: 'Organizing Secretary', phone: '088685222', photo: '/fellowship/ydy/executives/joseph-fofanah.jpg' },
   { name: 'Ruth M. Mbayo', role: 'Secretary General', phone: '032676585', photo: '/fellowship/ydy/executives/ruth-mbayo.jpg' },
   { name: 'Faith Coker', role: 'Treasurer', phone: '080725315', photo: '/fellowship/ydy/executives/faith-coker.jpg' },
+]
+
+// Static event listing — each event's photos live under
+// /public/fellowship/ydy/events/<event-folder>/
+const EVENTS: {
+  category: 'Annual' | 'Past' | 'Upcoming'
+  name: string
+  note?: string
+  photos?: string[]
+}[] = [
+  {
+    category: 'Annual',
+    name: 'Monthly Bible Study',
+    photos: [
+      '/fellowship/ydy/events/bible-study/1.jpg',
+      '/fellowship/ydy/events/bible-study/2.jpg',
+      '/fellowship/ydy/events/bible-study/3.jpg',
+      '/fellowship/ydy/events/bible-study/4.jpg',
+    ],
+  },
+  { category: 'Annual', name: 'Conference' },
+  { category: 'Annual', name: 'Thanksgiving' },
+  {
+    category: 'Past',
+    name: 'Annual Cleaning',
+    photos: ['/fellowship/ydy/events/annual-cleaning/1.jpg', '/fellowship/ydy/events/annual-cleaning/2.jpg'],
+  },
+  {
+    category: 'Past',
+    name: 'Welcome Splash',
+    photos: [
+      '/fellowship/ydy/events/welcome-splash/1.jpg',
+      '/fellowship/ydy/events/welcome-splash/2.jpg',
+      '/fellowship/ydy/events/welcome-splash/3.jpg',
+      '/fellowship/ydy/events/welcome-splash/4.jpg',
+    ],
+  },
+  {
+    category: 'Past',
+    name: 'Hiking',
+    photos: ['/fellowship/ydy/events/hiking/1.jpg', '/fellowship/ydy/events/hiking/2.jpg', '/fellowship/ydy/events/hiking/3.jpg'],
+  },
+  { category: 'Upcoming', name: 'Conference' },
+  { category: 'Upcoming', name: 'Thanksgiving' },
 ]
 
 export const metadata = {
@@ -84,8 +135,7 @@ export default function FellowshipPage({
             </p>
             <p style={{ lineHeight: 1.8, marginBottom: 20, maxWidth: 720, color: 'var(--gray)' }}>
               YDY was accomplished with the help of Children&apos;s Church teachers who served as coordinators
-              in its first years. The current theme of YDY is drawn from John 4:34 —{' '}
-              <em>&ldquo;My meat is to do the will of him that sent me, and to finish his work.&rdquo;</em>
+              in its first years.
             </p>
 
             <div style={{ border: '1px solid var(--line)', borderRadius: 'var(--radius)', padding: 20, marginBottom: 8, maxWidth: 480 }}>
@@ -99,15 +149,19 @@ export default function FellowshipPage({
         )}
 
         {activeTab === 'events' && (
-          <p style={{ color: 'var(--gray)', fontSize: 14 }}>
-            No YDY-specific events listed right now. Check the main Events page or follow our Facebook and
-            YouTube for announcements.
-          </p>
+          <div>
+            <EventGroup title="Annual Events" events={EVENTS.filter((e) => e.category === 'Annual')} />
+            <EventGroup title="Past Events" events={EVENTS.filter((e) => e.category === 'Past')} />
+            <EventGroup title="Upcoming Events" events={EVENTS.filter((e) => e.category === 'Upcoming')} />
+          </div>
         )}
 
         {activeTab === 'coordinators' && (
           <div>
             <h2 style={{ fontSize: 18, marginBottom: 16 }}>Present Coordinators</h2>
+            <div style={{ maxWidth: 480, marginBottom: 20 }}>
+              <LeaderCard photo={PATRICIA_AMARA.photo} leader={PATRICIA_AMARA} />
+            </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 20, maxWidth: 480 }}>
               {COORDINATORS.map((person) => (
                 <PersonCard key={person.name} {...person} />
@@ -128,6 +182,41 @@ export default function FellowshipPage({
         )}
       </div>
     </main>
+  )
+}
+
+function EventGroup({
+  title,
+  events,
+}: {
+  title: string
+  events: { name: string; note?: string; photos?: string[] }[]
+}) {
+  return (
+    <div style={{ marginBottom: 32 }}>
+      <h2 style={{ fontSize: 18, marginBottom: 14 }}>{title}</h2>
+      {events.length === 0 ? (
+        <p style={{ color: 'var(--gray)', fontSize: 13.5 }}>Nothing listed here yet.</p>
+      ) : (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {events.map((e) => (
+            <div key={e.name} className="card" style={{ padding: '16px 20px' }}>
+              <h3 style={{ fontSize: 15.5, marginBottom: e.note ? 4 : 0 }}>{e.name}</h3>
+              {e.note && <p style={{ fontSize: 13, color: 'var(--gray)' }}>{e.note}</p>}
+              {e.photos && e.photos.length > 0 && (
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginTop: 12 }}>
+                  {e.photos.map((src) => (
+                    <div key={src} style={{ position: 'relative', width: '100%', paddingTop: '100%', borderRadius: 'var(--radius)', overflow: 'hidden' }}>
+                      <Image src={src} alt={e.name} fill style={{ objectFit: 'cover' }} />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 
