@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { LeaderCard } from '@/components/LeaderModal'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 const COORDINATORS = [
   { name: 'Rev. Benjamin Tucker', role: 'Present Coordinator', photo: '/fellowship/ydy/coordinators/benjamin-tucker.jpg' },
@@ -79,6 +80,7 @@ export default function FellowshipPage({
 
   return (
     <main>
+      <Breadcrumbs items={[{ label: 'Fellowship' }]} />
       <div style={{ position: 'relative', minHeight: 260, overflow: 'hidden' }}>
         <Image
           src="/fellowship/ydy/hero.jpg"

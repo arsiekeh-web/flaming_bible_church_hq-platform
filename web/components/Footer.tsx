@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer
@@ -16,6 +18,11 @@ export default function Footer() {
         <a href="mailto:flamingbiblechurchhq@yahoo.com" style={{ color: 'var(--gold-light)', textDecoration: 'none' }}>
           flamingbiblechurchhq@yahoo.com
         </a>
+      </div>
+      <div style={{ marginBottom: 8 }}>
+        <Link href="/privacy-policy" style={{ color: '#8fa0c4', textDecoration: 'none', fontSize: 12.5 }}>
+          Privacy Policy
+        </Link>
       </div>
       <div style={{ color: '#8fa0c4' }}>
         © {new Date().getFullYear()} Flaming Evangelical Ministries HQ. All rights reserved.

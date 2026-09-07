@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import { LeaderCard } from '@/components/LeaderModal'
 import { LEADERS } from '@/lib/leaders'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata = {
   title: 'About Us',
@@ -10,6 +12,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main>
+      <Breadcrumbs items={[{ label: 'About' }]} />
       <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px' }}>
         <h1 style={{ color: '#fff', fontSize: 30 }}>About Us</h1>
         <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5, maxWidth: 640 }}>
@@ -34,6 +37,49 @@ export default function AboutPage() {
         </p>
       </div>
 
+      {/* --- Mission Statement --- */}
+      <div
+        style={{
+          background: 'linear-gradient(135deg, var(--navy-deep), var(--navy))',
+          padding: '56px 48px',
+          textAlign: 'center',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 760,
+            margin: '0 auto',
+          }}
+        >
+          <div
+            style={{
+              color: 'var(--gold-light)',
+              fontSize: 12.5,
+              fontWeight: 700,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              marginBottom: 18,
+            }}
+          >
+            Our Mission
+          </div>
+          <p
+            style={{
+              fontFamily: 'var(--font-fraunces)',
+              fontWeight: 600,
+              fontSize: 22,
+              lineHeight: 1.6,
+              color: '#fff',
+            }}
+          >
+            Our mission is to reach the lost with the uncompromised Gospel of Jesus Christ — from
+            the streets of Freetown to the nations of the world. Rooted in Romans 10:14, we exist
+            to preach, disciple, and deliver: raising believers who know the Word, walk in the
+            power of the Holy Spirit, and carry the fire of evangelism to every generation.
+          </p>
+        </div>
+      </div>
+
       {/* --- General Overseers --- */}
       <div className="section" style={{ paddingTop: 0 }}>
         <h2 style={{ fontSize: 22, marginBottom: 20 }}>General Overseers</h2>
@@ -51,6 +97,19 @@ export default function AboutPage() {
           <LeaderCard photo={LEADERS.pastor.photo} leader={LEADERS.pastor} />
         </div>
       </div>
+
+      {/* --- Related --- */}
+      <div className="section" style={{ paddingTop: 0, display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+        <Link href="/sermons" style={{ color: 'var(--navy)', fontWeight: 600, fontSize: 14 }}>
+          Watch a recent service →
+        </Link>
+        <Link href="/events" style={{ color: 'var(--navy)', fontWeight: 600, fontSize: 14 }}>
+          See upcoming events →
+        </Link>
+        <Link href="/fellowship" style={{ color: 'var(--navy)', fontWeight: 600, fontSize: 14 }}>
+          Explore our Fellowship (YDY) →
+        </Link>
+      </div>
     </main>
   )
-      }
+}

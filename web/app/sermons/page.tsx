@@ -1,3 +1,5 @@
+import Breadcrumbs from '@/components/Breadcrumbs'
+
 export const metadata = {
   title: 'Watch & Listen',
   description:
@@ -7,6 +9,7 @@ export const metadata = {
 export default function SermonsPage() {
   return (
     <main>
+      <Breadcrumbs items={[{ label: 'Watch & Listen' }]} />
       <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px' }}>
         <h1 style={{ color: '#fff', fontSize: 30 }}>Watch & Listen</h1>
         <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5, maxWidth: 560 }}>

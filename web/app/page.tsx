@@ -76,6 +76,25 @@ export default function Home() {
             <p style={{ color: '#cfd8ee', fontSize: 14.5, lineHeight: 1.6 }}>
               Ascension Town Road, Ascension Town Community, Freetown, Sierra Leone
             </p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Ascension+Town+Road,+Ascension+Town+Community,+Freetown,+Sierra+Leone"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-block', color: 'var(--gold-light)', fontWeight: 600, fontSize: 13.5, marginTop: 10 }}
+            >
+              Get Directions →
+            </a>
+            <div style={{ marginTop: 20, borderRadius: 6, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }}>
+              <iframe
+                title="Map to Flaming Evangelical Ministries HQ"
+                src="https://www.google.com/maps?q=Ascension+Town+Road,+Ascension+Town+Community,+Freetown,+Sierra+Leone&output=embed"
+                width="100%"
+                height="220"
+                style={{ border: 0, display: 'block' }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, color: '#cfd8ee' }}>
             <ServiceTime title="Sundays · 8:00 – 8:25 AM" label="Bible Exposition" />

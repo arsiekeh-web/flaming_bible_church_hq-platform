@@ -1,6 +1,7 @@
 import { Fraunces, Inter } from 'next/font/google'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 import './globals.css'
 
 // Real font loading — matches the approved prototype (Fraunces for display,
@@ -35,12 +36,35 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Church',
+    name: 'Flaming Evangelical Ministries HQ',
+    alternateName: 'Flaming Bible Church HQ',
+    url: 'https://flaming-bible-church-hq.org',
+    logo: 'https://flaming-bible-church-hq.org/logo.png',
+    image: 'https://flaming-bible-church-hq.org/og-image.jpg',
+    email: 'flamingbiblechurchhq@yahoo.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Ascension Town Road, Ascension Town Community',
+      addressLocality: 'Freetown',
+      addressCountry: 'SL',
+    },
+    sameAs: ['https://www.facebook.com/share/1C8zu2wYax/'],
+  }
+
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Nav />
         {children}
         <Footer />
+        <GoogleAnalytics />
       </body>
     </html>
   )
