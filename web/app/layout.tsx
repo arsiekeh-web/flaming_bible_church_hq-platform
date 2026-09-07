@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: 'Flaming Evangelical Ministries HQ',
     alternateName: 'Flaming Bible Church HQ',
     url: 'https://flaming-bible-church-hq.org',
-    logo: 'https://flaming-bible-church-hq.org/logo.png',
+    logo: 'https://flaming-bible-church-hq.org/icon-512.png',
     image: 'https://flaming-bible-church-hq.org/og-image.jpg',
     email: 'flamingbiblechurchhq@yahoo.com',
     address: {
