@@ -35,8 +35,8 @@ export default function ReverencePage() {
         >
           <h1 style={{ color: '#fff', fontSize: 34 }}>Reverence</h1>
           <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5, maxWidth: 560 }}>
-            A worship night marking five years of Reverence, directing worship to the Lord and celebrating
-            God&apos;s grace over Flaming Evangelical Ministries International.
+            An annual worship night directing hearts to the Lord and celebrating God&apos;s grace over
+            Flaming Evangelical Ministries International.
           </p>
         </div>
       </div>

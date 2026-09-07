@@ -4,7 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 export const metadata = {
   title: 'Events',
   description:
-    "What's happening at Flaming Evangelical Ministries HQ — including Reverence, our annual worship night celebrating five years of consistent worship in Freetown, Sierra Leone.",
+    "What's happening at Flaming Evangelical Ministries HQ — including Reverence, our annual worship night of consistent worship in Freetown, Sierra Leone.",
 }
 
 // Static — update by hand when events change.
