@@ -9,6 +9,12 @@ const UPCOMING_EVENTS = [
   { id: 'reverence-5', title: 'Reverence', when: 'Annual — Ascension season', membersOnly: false },
 ]
 
+export const metadata = {
+  title: 'Flaming Evangelical Ministries HQ | Church in Freetown, Sierra Leone',
+  description:
+    'Flaming Evangelical Ministries HQ is a Bible-believing church in Ascension Town, Freetown, Sierra Leone. Join us for Sunday Bible Exposition & Divine Service, Mid-Week Breakthrough Explosion Service, Friday Holy Ghost Prayer, and more. "How shall they hear without a preacher?" — Romans 10:14.',
+}
+
 export default function Home() {
   return (
     <main>
@@ -72,9 +78,12 @@ export default function Home() {
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, color: '#cfd8ee' }}>
-            <ServiceTime title="Sunday · 8:00 – 8:30 AM" label="Bible Study" />
-            <ServiceTime title="Sunday · 8:30 – 10:00 AM" label="Sunday Service" />
-            <ServiceTime title="Wednesday · 5:00 – 8:00 PM" label="Midweek Service" />
+            <ServiceTime title="Sundays · 8:00 – 8:25 AM" label="Bible Exposition" />
+            <ServiceTime title="Sundays · 8:30 – 10:30 AM" label="Divine Service" />
+            <ServiceTime title="Wednesdays · 5:30 PM" label="Mid-Week Breakthrough Explosion Service" />
+            <ServiceTime title="Fridays · 5:30 PM" label="Holy Ghost Prayer" />
+            <ServiceTime title="Last Wednesday of Every Month · 5:30 PM" label="Solution on a Wednesday Night" />
+            <ServiceTime title="Every 3rd Friday · 11:00 PM – 5:30 AM" label="All-Night of Prevailing Prayers" />
           </div>
         </div>
       </div>
