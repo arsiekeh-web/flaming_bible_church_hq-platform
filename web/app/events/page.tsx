@@ -23,7 +23,9 @@ export default function EventsPage() {
       <Breadcrumbs items={[{ label: 'Events' }]} />
       <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px' }}>
         <h1 style={{ color: '#fff', fontSize: 30 }}>Events</h1>
-        <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5 }}>What&apos;s happening at Flaming Evangelical Ministries HQ.</p>
+        <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5 }}>
+          Church events, crusades, and worship nights at Flaming Evangelical Ministries HQ in Freetown, Sierra Leone.
+        </p>
       </div>
 
       <div className="section" style={{ paddingBottom: 0 }}>

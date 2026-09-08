@@ -13,7 +13,7 @@ export default function SermonsPage() {
       <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px' }}>
         <h1 style={{ color: '#fff', fontSize: 30 }}>Watch & Listen</h1>
         <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5, maxWidth: 560 }}>
-          Services and messages stream live and stay up afterward on our Facebook page and YouTube channel.
+          Watch live church services and sermons from Flaming Evangelical Ministries HQ, Freetown, Sierra Leone. Services stream live and stay available afterward on our Facebook page and YouTube channel.
         </p>
       </div>
 
