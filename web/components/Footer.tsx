@@ -12,7 +12,7 @@ export default function Footer() {
       }}
     >
       <div style={{ marginBottom: 8 }}>
-        Flaming Evangelical Ministries HQ · Ascension Town, Freetown, Sierra Leone
+        Flaming Bible Church HQ · Ascension Town, Freetown, Sierra Leone
       </div>
       <div style={{ marginBottom: 8 }}>
         <a href="mailto:flamingbiblechurchhq@yahoo.com" style={{ color: 'var(--gold-light)', textDecoration: 'none' }}>
@@ -25,7 +25,7 @@ export default function Footer() {
         </Link>
       </div>
       <div style={{ color: '#8fa0c4' }}>
-        © {new Date().getFullYear()} Flaming Evangelical Ministries HQ. All rights reserved.
+        © {new Date().getFullYear()} Flaming Bible Church HQ. All rights reserved.
       </div>
     </footer>
   )

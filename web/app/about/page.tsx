@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 export const metadata = {
   title: 'About Us',
   description:
-    'Meet the leadership of Flaming Evangelical Ministries HQ in Ascension Town, Freetown — Bishop Dr. Frederick Abu Sidique Koroma, Rev. Dr. Lady Patricia Koroma, and Head Pastor Rev. Olamide Macculey.',
+    'Meet the leadership of Flaming Bible Church HQ (Flaming Evangelical Ministries International) in Ascension Town, Freetown — Bishop Dr. Frederick Abu Sidique Koroma, Rev. Dr. Lady Patricia Koroma, and Head Pastor Rev. Olamide Macculey.',
 }
 
 export default function AboutPage() {
@@ -16,7 +16,7 @@ export default function AboutPage() {
       <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px' }}>
         <h1 style={{ color: '#fff', fontSize: 30 }}>About Us</h1>
         <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5, maxWidth: 640 }}>
-          Flaming Evangelical Ministries HQ, in Ascension Town, Freetown, Sierra Leone.
+          Flaming Bible Church HQ, in Ascension Town, Freetown, Sierra Leone.
         </p>
       </div>
 

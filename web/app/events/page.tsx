@@ -4,7 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 export const metadata = {
   title: 'Events',
   description:
-    "What's happening at Flaming Evangelical Ministries HQ — including Reverence, our annual worship night of consistent worship in Freetown, Sierra Leone.",
+    "What's happening at Flaming Bible Church HQ — including Reverence, our annual worship night of consistent worship in Freetown, Sierra Leone.",
 }
 
 // Static — update by hand when events change.
@@ -24,7 +24,7 @@ export default function EventsPage() {
       <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px' }}>
         <h1 style={{ color: '#fff', fontSize: 30 }}>Events</h1>
         <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5 }}>
-          Church events, crusades, and worship nights at Flaming Evangelical Ministries HQ in Freetown, Sierra Leone.
+          Church events, crusades, and worship nights at Flaming Bible Church HQ in Freetown, Sierra Leone.
         </p>
       </div>
 

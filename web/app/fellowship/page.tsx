@@ -68,7 +68,7 @@ const EVENTS: {
 export const metadata = {
   title: 'Fellowship — YDY',
   description:
-    'The Young Dynamic Youth Fellowship (YDY) at Flaming Evangelical Ministries HQ, Ascension Town, Freetown — formed 1998/99 to bridge Children\'s Church and Youth Fellowship. Meet our coordinators and executives.',
+    'The Young Dynamic Youth Fellowship (YDY) at Flaming Bible Church HQ, Ascension Town, Freetown — formed 1998/99 to bridge Children\'s Church and Youth Fellowship. Meet our coordinators and executives.',
 }
 
 export default function FellowshipPage({

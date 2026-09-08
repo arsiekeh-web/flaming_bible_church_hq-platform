@@ -3,7 +3,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 export const metadata = {
   title: 'Watch & Listen',
   description:
-    'Watch Sunday Service and Midweek Service live from Flaming Evangelical Ministries HQ in Freetown, Sierra Leone, on Facebook and YouTube.',
+    'Watch Sunday Service and Midweek Service live from Flaming Bible Church HQ in Freetown, Sierra Leone, on Facebook and YouTube.',
 }
 
 export default function SermonsPage() {
@@ -13,7 +13,7 @@ export default function SermonsPage() {
       <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px' }}>
         <h1 style={{ color: '#fff', fontSize: 30 }}>Watch & Listen</h1>
         <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5, maxWidth: 560 }}>
-          Watch live church services and sermons from Flaming Evangelical Ministries HQ, Freetown, Sierra Leone. Services stream live and stay available afterward on our Facebook page and YouTube channel.
+          Watch live church services and sermons from Flaming Bible Church HQ, Freetown, Sierra Leone. Services stream live and stay available afterward on our Facebook page and YouTube channel.
         </p>
       </div>
 

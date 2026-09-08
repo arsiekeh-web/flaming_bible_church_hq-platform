@@ -2,7 +2,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy Policy for Flaming Evangelical Ministries HQ.',
+  description: 'Privacy Policy for Flaming Bible Church HQ.',
 }
 
 export default function PrivacyPolicyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
 
       <div className="section" style={{ maxWidth: 760 }}>
         <p style={{ lineHeight: 1.8, color: 'var(--gray)', marginBottom: 20 }}>
-          Flaming Evangelical Ministries HQ ("we," "our," or "us") operates this website. This
+          Flaming Bible Church HQ ("we," "our," or "us") operates this website. This
           page explains what information we collect when you visit, and how we use it.
         </p>
 

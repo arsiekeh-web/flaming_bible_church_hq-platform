@@ -20,15 +20,15 @@ const inter = Inter({
 export const metadata = {
   metadataBase: new URL('https://flaming-bible-church-hq.org'),
   title: {
-    default: 'Flaming Evangelical Ministries HQ',
-    template: '%s | Flaming Evangelical Ministries HQ',
+    default: 'Flaming Bible Church HQ',
+    template: '%s | Flaming Bible Church HQ',
   },
-  description: 'A Bible-believing church in Ascension Town, Freetown, Sierra Leone. "How shall they hear without a preacher?" — Romans 10:14',
+  description: 'Flaming Bible Church HQ (Flaming Evangelical Ministries International) — a Bible-believing church in Ascension Town, Freetown, Sierra Leone. "How shall they hear without a preacher?" — Romans 10:14',
   openGraph: {
-    title: 'Flaming Evangelical Ministries HQ',
+    title: 'Flaming Bible Church HQ',
     description: 'A Bible-believing church in Ascension Town, Freetown, Sierra Leone.',
     url: 'https://flaming-bible-church-hq.org',
-    siteName: 'Flaming Evangelical Ministries HQ',
+    siteName: 'Flaming Bible Church HQ',
     images: ['/og-image.jpg'],
     locale: 'en_US',
     type: 'website',
@@ -39,8 +39,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Church',
-    name: 'Flaming Evangelical Ministries HQ',
-    alternateName: 'Flaming Bible Church HQ',
+    name: 'Flaming Bible Church HQ',
+    alternateName: 'Flaming Evangelical Ministries International',
     url: 'https://flaming-bible-church-hq.org',
     logo: 'https://flaming-bible-church-hq.org/icon-512.png',
     image: 'https://flaming-bible-church-hq.org/og-image.jpg',

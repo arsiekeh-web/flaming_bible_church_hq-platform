@@ -10,9 +10,9 @@ const UPCOMING_EVENTS = [
 ]
 
 export const metadata = {
-  title: 'Flaming Evangelical Ministries HQ | Church in Freetown, Sierra Leone',
+  title: 'Flaming Bible Church HQ | Freetown, Sierra Leone',
   description:
-    'Flaming Evangelical Ministries HQ is a Bible-believing church in Ascension Town, Freetown, Sierra Leone. Join us for Sunday Bible Exposition & Divine Service, Mid-Week Breakthrough Explosion Service, Friday Holy Ghost Prayer, and more. "How shall they hear without a preacher?" — Romans 10:14.',
+    'Flaming Bible Church HQ (Flaming Evangelical Ministries International) is a Bible-believing church in Ascension Town, Freetown, Sierra Leone. Join us for Sunday Bible Exposition & Divine Service, Mid-Week Breakthrough Explosion Service, Friday Holy Ghost Prayer, and more. "How shall they hear without a preacher?" — Romans 10:14.',
 }
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
       >
         <Image
           src="/about/general-overseers-joint.jpg"
-          alt="Bishop Dr. Frederick Abu Sidique Koroma and Rev. Dr. Lady Patricia Koroma, General Overseers of Flaming Evangelical Ministries HQ"
+          alt="Bishop Dr. Frederick Abu Sidique Koroma and Rev. Dr. Lady Patricia Koroma, General Overseers of Flaming Bible Church HQ"
           fill
           style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
           priority
@@ -46,8 +46,11 @@ export default function Home() {
             🔥 Freetown, Sierra Leone
           </div>
           <h1 style={{ fontSize: 44, lineHeight: 1.05, marginBottom: 6 }}>
-            Flaming Evangelical Ministries HQ
+            Flaming Bible Church HQ
           </h1>
+          <p style={{ color: 'var(--gold-light)', fontSize: 13, marginBottom: 4, fontWeight: 500, opacity: 0.85 }}>
+            Flaming Evangelical Ministries International
+          </p>
           <p style={{ color: 'var(--gold-light)', fontSize: 14, marginBottom: 18, fontWeight: 500 }}>
             Ascension Town, Freetown, Sierra Leone
           </p>
@@ -71,7 +74,7 @@ export default function Home() {
           A Bible-Believing Church in Freetown, Sierra Leone
         </h2>
         <p style={{ lineHeight: 1.8, color: 'var(--gray)' }}>
-          Flaming Evangelical Ministries HQ is an evangelical, Bible-believing church located in
+          Flaming Bible Church HQ (Flaming Evangelical Ministries International) is an evangelical, Bible-believing church located in
           Ascension Town, Freetown, Sierra Leone. Whether you're searching for a church near
           Ascension Town, a place of evangelism and deliverance ministry in Freetown, or simply a
           spiritual home, our doors are open. From Sunday worship and Bible study to midweek
@@ -101,7 +104,7 @@ export default function Home() {
             </a>
             <div style={{ marginTop: 20, borderRadius: 6, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }}>
               <iframe
-                title="Map to Flaming Evangelical Ministries HQ"
+                title="Map to Flaming Bible Church HQ"
                 src="https://www.google.com/maps?q=Ascension+Town+Road,+Ascension+Town+Community,+Freetown,+Sierra+Leone&output=embed"
                 width="100%"
                 height="220"
@@ -176,7 +179,7 @@ export default function Home() {
       </div>
 
       <footer style={{ background: 'var(--navy-deep)', color: '#c9d2e8', padding: '40px 48px', fontSize: 13 }}>
-        © 2026 Flaming Evangelical Ministries HQ — Freetown, Sierra Leone
+        © 2026 Flaming Bible Church HQ — Freetown, Sierra Leone
       </footer>
     </main>
   )
