@@ -17,7 +17,7 @@ const EXECUTIVES = [
   { name: 'Julian Palmer', role: 'President', phone: '077375815', photo: '/fellowship/ydy/executives/julian-palmer.jpg' },
   { name: 'Amanda Kargbo', role: 'Vice President', phone: '079873767', photo: '/fellowship/ydy/executives/amanda-kargbo.jpg' },
   { name: 'Joseph Fofanah', role: 'Organizing Secretary', phone: '088685222', photo: '/fellowship/ydy/executives/joseph-fofanah.jpg' },
-  { name: 'Ruth M. Mbayo', role: 'Secretary General', phone: '032676585', photo: '/fellowship/ydy/executives/ruth-mbayo.jpg' },
+  { name: 'Siebatu Ruth Mbayoh', role: 'Secretary General', phone: '032676585', photo: '/fellowship/ydy/executives/ruth-mbayo.jpg' },
   { name: 'Faith Coker', role: 'Treasurer', phone: '080725315', photo: '/fellowship/ydy/executives/faith-coker.jpg' },
 ]
 
