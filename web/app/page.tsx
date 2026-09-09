@@ -52,7 +52,7 @@ export default function Home() {
             Flaming Evangelical Ministries International
           </p>
           <p style={{ color: 'var(--gold-light)', fontSize: 14, marginBottom: 18, fontWeight: 500 }}>
-            Ascension Town, Freetown, Sierra Leone
+            Ascension Town / Syke Street, Freetown, Sierra Leone
           </p>
           <p style={{ fontFamily: 'var(--font-fraunces)', fontStyle: 'italic', color: 'var(--gold-light)', fontSize: 16, marginBottom: 28 }}>
             &ldquo;How shall they hear without a preacher?&rdquo; — Romans 10:14
@@ -90,12 +90,12 @@ export default function Home() {
             <div style={{ color: 'var(--gold-light)', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
               📍 Visit Us
             </div>
-            <h2 style={{ color: '#fff', fontSize: 24, marginBottom: 14 }}>Ascension Town, Freetown</h2>
+            <h2 style={{ color: '#fff', fontSize: 24, marginBottom: 14 }}>Ascension Town / Syke Street, Freetown</h2>
             <p style={{ color: '#cfd8ee', fontSize: 14.5, lineHeight: 1.6 }}>
-              Ascension Town Road, Ascension Town Community, Freetown, Sierra Leone
+              Syke Street, Ascension Town, Freetown, Sierra Leone
             </p>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Ascension+Town+Road,+Ascension+Town+Community,+Freetown,+Sierra+Leone"
+              href="https://www.google.com/maps/search/?api=1&query=Syke+Street,+Ascension+Town,+Freetown,+Sierra+Leone"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: 'inline-block', color: 'var(--gold-light)', fontWeight: 600, fontSize: 13.5, marginTop: 10 }}
@@ -105,7 +105,7 @@ export default function Home() {
             <div style={{ marginTop: 20, borderRadius: 6, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }}>
               <iframe
                 title="Map to Flaming Bible Church HQ"
-                src="https://www.google.com/maps?q=Ascension+Town+Road,+Ascension+Town+Community,+Freetown,+Sierra+Leone&output=embed"
+                src="https://www.google.com/maps?q=Syke+Street,+Ascension+Town,+Freetown,+Sierra+Leone&output=embed"
                 width="100%"
                 height="220"
                 style={{ border: 0, display: 'block' }}

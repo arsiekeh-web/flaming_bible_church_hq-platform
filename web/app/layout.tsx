@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     email: 'flamingbiblechurchhq@yahoo.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Ascension Town Road, Ascension Town Community',
+      streetAddress: 'Syke Street, Ascension Town',
       addressLocality: 'Freetown',
       addressCountry: 'SL',
     },
