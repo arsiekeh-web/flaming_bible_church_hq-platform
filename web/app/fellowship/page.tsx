@@ -241,7 +241,7 @@ function ThanksgivingBanner() {
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, marginBottom: 4 }}>
           <BannerDetail label="Date" value="Sunday, September 13" />
-          <BannerDetail label="Venue" value="Flaming Church Hall" />
+          <BannerDetail label="Venue" value="Flaming Bible Church HQ (Headquarters Church)" />
           <BannerDetail label="Organized by" value="Young Dynamic Youth (YDY)" />
         </div>
       </div>
