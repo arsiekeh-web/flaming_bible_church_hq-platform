@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 export const metadata = {
   title: 'About Us',
   description:
-    'Meet the leadership of Flaming Bible Church HQ (Flaming Evangelical Ministries International) in Ascension Town, Freetown — Bishop Dr. Frederick Abu Sidique Koroma, Rev. Dr. Lady Patricia Koroma, and Head Pastor Rev. Olamide Macculey.',
+    'Meet the leadership of Flaming Bible Church HQ (Flaming Evangelical Ministries International) in Ascension Town, Freetown — Bishop Dr. Frederick Abu Sidique Koroma, Rev. Dr. Lady Patricia Koroma, and Main Pastor Rev. Olamide Macauley.',
 }
 
 export default function AboutPage() {
@@ -92,7 +92,7 @@ export default function AboutPage() {
 
       {/* --- Head Pastor --- */}
       <div className="section" style={{ paddingTop: 0 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 20 }}>Head Pastor</h2>
+        <h2 style={{ fontSize: 22, marginBottom: 20 }}>Main Pastor</h2>
         <div style={{ maxWidth: 480 }}>
           <LeaderCard photo={LEADERS.pastor.photo} leader={LEADERS.pastor} />
         </div>

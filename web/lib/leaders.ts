@@ -97,7 +97,7 @@ export const LEADERS: Record<string, Leader & { photo: string }> = {
       },
       {
         heading: 'Education',
-        text: 'Lady Patricia began her education at Central Nursery School before proceeding to Tower Hill Municipal School for primary education, and later the Freetown Secondary School for Girls (FSSG). She developed an interest in Reading, Mathematics, Biology, and Art, with a natural talent for drawing and carving recognised by her school principal, the late Mrs. Blake. She did not proceed to college, as her life took a different direction after meeting the man who would become her husband.',
+        text: 'Lady Patricia began her education at Central Nursery School before proceeding to Tower Hill Municipal School for primary education, and later the Freetown Secondary School for Girls (FSSG). She developed an interest in Reading, Mathematics, Biology, and Art, with a natural talent for drawing and carving recognised by her school principal, the late Mrs. Blake.',
       },
       {
         heading: 'Faith and Spiritual Journey',
@@ -147,8 +147,40 @@ export const LEADERS: Record<string, Leader & { photo: string }> = {
   },
   pastor: {
     photo: '/about/head-pastor.jpg',
-    name: 'Rev. Olamide Macculey',
-    role: 'Head Pastor',
-    bio: "Rev. Olamide Macculey is the Head Pastor of Flaming Bible Church HQ. He studied at the University of Newcastle-upon-Tyne. He serves as the School Manager for Flaming High School, overseeing administration and institutional development.",
+    name: 'Rev. Olamide Macauley',
+    role: 'Main Pastor, Headquarters Church',
+    bio: [
+      {
+        text: 'Born on 28th October 1961, Rev. Olamide Macauley is a pastor, husband, father, grandfather, and dedicated servant of God whose life reflects a journey of faith, education, family, leadership, and service.',
+      },
+      {
+        heading: 'Early Life and Education',
+        text: 'Rev. Macauley began his education at The International Primary School, later attending Methodist Boys High School and Freetown Technical Institute for his secondary and technical education. He proceeded to Fourah Bay College, University of Sierra Leone, where he studied Engineering, and was awarded a scholarship to further his education at the University of Newcastle in the United Kingdom. His training in Engineering gave him a strong foundation in discipline, analytical thinking, and problem-solving — qualities that continue to shape his leadership and administrative responsibilities within the ministry.',
+      },
+      {
+        heading: 'His Encounter with Christ',
+        text: 'A major turning point in Rev. Macauley\'s life was his encounter with Jesus Christ. When he first met his wife, Rev. Juliete Campbell, she was not yet saved — she later came to know Christ and invited him to accompany her to church. It was there that he had an encounter with Christ and gave his life to Jesus, roughly 36 years ago, around 1990 — a salvation experience that became the foundation for his lifelong commitment to Christian service and ministry.',
+      },
+      {
+        heading: 'Marriage and Family',
+        text: 'Rev. Olamide Macauley has been married to Rev. Juliete Campbell for 36 years, since their wedding on 27th January 1990. Their marriage has been a partnership built on faith, family, and service, blessed with three children and four grandchildren. His marriage to Rev. Juliete holds particular significance, as she played an important role in his journey to salvation.',
+      },
+      {
+        heading: 'Ministry and Leadership',
+        text: 'Rev. Macauley currently serves as the Main Pastor of the Headquarters Church, providing spiritual oversight and pastoral leadership to the congregation. His responsibilities extend beyond the Headquarters Church to the wider ministry, working closely with the General Overseer to provide oversight to the ministry\'s various branches — receiving reports, assisting with administration, and supporting day-to-day operations. He also works with the ministry\'s various departments, helping ensure their activities are properly coordinated in accordance with the vision and structure of the ministry, combining both spiritual and administrative leadership.',
+      },
+      {
+        heading: 'A Life of Service',
+        text: 'Rev. Macauley\'s journey from an Engineering student at Fourah Bay College to a pastor and ministry leader is one marked by growth, responsibility, and service. His professional and academic background has complemented his ministry responsibilities, particularly in organisation, administration, and problem-solving, as he continues working alongside the General Overseer to ensure the ministry\'s branches, departments, and activities function effectively.',
+      },
+      {
+        heading: 'Legacy',
+        text: 'Rev. Olamide Macauley\'s life reflects a man who has embraced many roles across the years — student, engineer in training, husband, father, grandfather, pastor, and ministry leader. His 36 years of marriage, three children, four grandchildren, academic achievements, encounter with Christ, and years of ministry service form important parts of his story, one that testifies to the transformative power of an encounter with Christ and to remaining faithful to one\'s calling through every season of life.',
+      },
+      {
+        heading: 'His Philosophy',
+        text: '"You cannot choose your valley, but you can choose what you do in the valley." This reflects Rev. Macauley\'s perspective on life\'s challenges and personal responsibility — acknowledging that difficult seasons are sometimes unavoidable, but how a person responds to them remains a choice. It is a message of faith, resilience, perseverance, and hope.',
+      },
+    ],
   },
-        }
+}

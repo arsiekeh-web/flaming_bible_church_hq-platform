@@ -61,7 +61,12 @@ const EVENTS: {
     name: 'Hiking',
     photos: ['/fellowship/ydy/events/hiking/1.jpg', '/fellowship/ydy/events/hiking/2.jpg', '/fellowship/ydy/events/hiking/3.jpg'],
   },
-  { category: 'Upcoming', name: 'Conference' },
+  {
+    category: 'Upcoming',
+    name: 'Conference',
+    note: '8th Annual Conference — "Arise and Takeover" (Isaiah 60:1–3) · Saturday, Sept 12 · Flaming Church Hall · 10:00 AM',
+    photos: ['/fellowship/ydy/events/conference/flyer-2026.jpg'],
+  },
   { category: 'Upcoming', name: 'Thanksgiving' },
 ]
 
@@ -152,6 +157,7 @@ export default function FellowshipPage({
 
         {activeTab === 'events' && (
           <div>
+            <ThanksgivingBanner />
             <EventGroup title="Annual Events" events={EVENTS.filter((e) => e.category === 'Annual')} />
             <EventGroup title="Past Events" events={EVENTS.filter((e) => e.category === 'Past')} />
             <EventGroup title="Upcoming Events" events={EVENTS.filter((e) => e.category === 'Upcoming')} />
@@ -187,6 +193,73 @@ export default function FellowshipPage({
   )
 }
 
+function ThanksgivingBanner() {
+  return (
+    <div
+      style={{
+        position: 'relative',
+        overflow: 'hidden',
+        borderRadius: 10,
+        background: 'linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, var(--crimson-deep) 100%)',
+        padding: '36px 28px',
+        marginBottom: 32,
+        boxShadow: '0 10px 30px rgba(6,28,74,0.25)',
+      }}
+    >
+      {/* decorative glow accents */}
+      <div style={{ position: 'absolute', top: -60, right: -60, width: 200, height: 200, borderRadius: '50%', background: 'radial-gradient(circle, rgba(230,196,120,0.25), transparent 70%)' }} />
+      <div style={{ position: 'absolute', bottom: -80, left: -40, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(122,15,38,0.35), transparent 70%)' }} />
+
+      <div style={{ position: 'relative', maxWidth: 620 }}>
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 6,
+            background: 'rgba(232,200,120,0.15)',
+            border: '1px solid rgba(232,200,120,0.4)',
+            color: 'var(--gold-light)',
+            fontSize: 11.5,
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            padding: '6px 14px',
+            borderRadius: 999,
+            marginBottom: 16,
+          }}
+        >
+          ✨ Save the Date
+        </div>
+
+        <h3 style={{ color: '#fff', fontSize: 26, lineHeight: 1.2, marginBottom: 10 }}>
+          YDY Thanksgiving Service
+        </h3>
+        <p style={{ color: '#cfd8ee', fontSize: 14.5, lineHeight: 1.7, marginBottom: 22, maxWidth: 480 }}>
+          Join the Young Dynamic Youth Fellowship as we come together in gratitude to celebrate
+          God&apos;s faithfulness — a time of praise, testimony, and thanksgiving as a family.
+        </p>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, marginBottom: 4 }}>
+          <BannerDetail label="Date" value="Sunday, September 13" />
+          <BannerDetail label="Venue" value="Flaming Church Hall" />
+          <BannerDetail label="Organized by" value="Young Dynamic Youth (YDY)" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function BannerDetail({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div style={{ color: 'var(--gold-light)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 3 }}>
+        {label}
+      </div>
+      <div style={{ color: '#fff', fontSize: 14, fontWeight: 600 }}>{value}</div>
+    </div>
+  )
+}
+
 function EventGroup({
   title,
   events,
@@ -205,7 +278,12 @@ function EventGroup({
             <div key={e.name} className="card" style={{ padding: '16px 20px' }}>
               <h3 style={{ fontSize: 15.5, marginBottom: e.note ? 4 : 0 }}>{e.name}</h3>
               {e.note && <p style={{ fontSize: 13, color: 'var(--gray)' }}>{e.note}</p>}
-              {e.photos && e.photos.length > 0 && (
+              {e.photos && e.photos.length === 1 && (
+                <div style={{ position: 'relative', width: '100%', maxWidth: 280, marginTop: 12, borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.15)' }}>
+                  <Image src={e.photos[0]} alt={e.name} width={810} height={1080} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
+              )}
+              {e.photos && e.photos.length > 1 && (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginTop: 12 }}>
                   {e.photos.map((src) => (
                     <div key={src} style={{ position: 'relative', width: '100%', paddingTop: '100%', borderRadius: 'var(--radius)', overflow: 'hidden' }}>
