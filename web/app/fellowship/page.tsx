@@ -2,9 +2,12 @@ import Image from 'next/image'
 import { LeaderCard } from '@/components/LeaderModal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
-const COORDINATORS = [
-  { name: 'Rev. Benjamin Tucker', role: 'Present Coordinator', photo: '/fellowship/ydy/coordinators/benjamin-tucker.jpg' },
-]
+const BENJAMIN_TUCKER = {
+  name: 'Rev. Benjamin Eugene Ifayomi Tucker',
+  role: 'Co-Coordinator',
+  photo: '/fellowship/ydy/coordinators/benjamin-tucker.jpg',
+  bio: 'Rev. Benjamin Eugene Ifayomi Tucker served in the Young Dynamic Youth Fellowship from 2006 to 2017, including eight years as President. During his tenure, he initiated the Juvenile Delinquency Support Project to rehabilitate and reintegrate at-risk youth. Since 2017, he has served as Co-Coordinator of the Fellowship. Rev. Tucker holds a Bachelor\u2019s degree in Civil Engineering. He currently teaches Mathematics at Flaming High School and also works in the Administrative Office of Flaming Evangelical Ministries.',
+}
 
 const PATRICIA_AMARA = {
   name: 'Patricia Amara',
@@ -167,13 +170,9 @@ export default function FellowshipPage({
         {activeTab === 'coordinators' && (
           <div>
             <h2 style={{ fontSize: 18, marginBottom: 16 }}>Present Coordinators</h2>
-            <div style={{ maxWidth: 480, marginBottom: 20 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20, maxWidth: 700 }}>
               <LeaderCard photo={PATRICIA_AMARA.photo} leader={PATRICIA_AMARA} />
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 20, maxWidth: 480 }}>
-              {COORDINATORS.map((person) => (
-                <PersonCard key={person.name} {...person} />
-              ))}
+              <LeaderCard photo={BENJAMIN_TUCKER.photo} leader={BENJAMIN_TUCKER} />
             </div>
           </div>
         )}
