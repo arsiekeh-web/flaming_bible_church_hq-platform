@@ -106,9 +106,8 @@ export default function Home() {
               <iframe
                 title="Map to Flaming Bible Church HQ"
                 src="https://www.google.com/maps?q=Syke+Street,+Ascension+Town,+Freetown,+Sierra+Leone&output=embed"
-                width="100%"
                 height="220"
-                style={{ border: 0, display: 'block' }}
+                style={{ border: 0, display: 'block', width: '100%' }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />

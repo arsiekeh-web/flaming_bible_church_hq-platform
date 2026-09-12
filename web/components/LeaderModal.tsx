@@ -22,8 +22,16 @@ export function LeaderCard({ leader, photo }: { leader: Leader; photo?: string }
 
   return (
     <>
-      <button
+      <div
+        role="button"
+        tabIndex={0}
         onClick={() => setOpen(true)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            setOpen(true)
+          }
+        }}
         className="card"
         style={{
           padding: 24,
@@ -39,7 +47,7 @@ export function LeaderCard({ leader, photo }: { leader: Leader; photo?: string }
         <h3 style={{ fontSize: 18, marginBottom: 10 }}>{leader.name}</h3>
         <p style={{ fontSize: 13.5, lineHeight: 1.7, color: 'var(--gray)', marginBottom: 12 }}>{preview}</p>
         <span style={{ fontSize: 12.5, fontWeight: 600, color: 'var(--crimson)' }}>Read full bio →</span>
-      </button>
+      </div>
 
       {open && (
         <div
