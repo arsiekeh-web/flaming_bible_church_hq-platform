@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { LeaderCard } from '@/components/LeaderModal'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import PhotoGallery from '@/components/PhotoGallery'
 
 const BENJAMIN_TUCKER = {
   name: 'Rev. Benjamin Eugene Ifayomi Tucker',
@@ -65,10 +66,24 @@ const EVENTS: {
     photos: ['/fellowship/ydy/events/hiking/1.jpg', '/fellowship/ydy/events/hiking/2.jpg', '/fellowship/ydy/events/hiking/3.jpg'],
   },
   {
-    category: 'Upcoming',
-    name: 'Conference',
-    note: '8th Annual Conference — "Arise and Takeover" (Isaiah 60:1–3) · Saturday, Sept 12 · Flaming Church Hall · 10:00 AM',
-    photos: ['/fellowship/ydy/events/conference/flyer-2026.jpg'],
+    category: 'Past',
+    name: '8th Annual Conference',
+    note: '"Arise and Takeover" (Isaiah 60:1–3) · Saturday, Sept 12 · Flaming Church Hall',
+    photos: [
+      '/fellowship/ydy/events/conference/flyer-2026.jpg',
+      '/fellowship/ydy/events/conference/moment-01.jpg',
+      '/fellowship/ydy/events/conference/moment-02.jpg',
+      '/fellowship/ydy/events/conference/moment-03.jpg',
+      '/fellowship/ydy/events/conference/moment-04.jpg',
+      '/fellowship/ydy/events/conference/moment-05.jpg',
+      '/fellowship/ydy/events/conference/moment-06.jpg',
+      '/fellowship/ydy/events/conference/moment-07.jpg',
+      '/fellowship/ydy/events/conference/moment-08.jpg',
+      '/fellowship/ydy/events/conference/moment-09.jpg',
+      '/fellowship/ydy/events/conference/moment-10.jpg',
+      '/fellowship/ydy/events/conference/moment-11.jpg',
+      '/fellowship/ydy/events/conference/moment-12.jpg',
+    ],
   },
   { category: 'Upcoming', name: 'Thanksgiving' },
 ]
@@ -273,26 +288,65 @@ function EventGroup({
         <p style={{ color: 'var(--gray)', fontSize: 13.5 }}>Nothing listed here yet.</p>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          {events.map((e) => (
-            <div key={e.name} className="card" style={{ padding: '16px 20px' }}>
-              <h3 style={{ fontSize: 15.5, marginBottom: e.note ? 4 : 0 }}>{e.name}</h3>
-              {e.note && <p style={{ fontSize: 13, color: 'var(--gray)' }}>{e.note}</p>}
-              {e.photos && e.photos.length === 1 && (
-                <div style={{ position: 'relative', width: '100%', maxWidth: 280, marginTop: 12, borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.15)' }}>
-                  <Image src={e.photos[0]} alt={e.name} width={810} height={1080} style={{ width: '100%', height: 'auto', display: 'block' }} />
+          {events.map((e) => {
+            const isFeatured = e.photos && e.photos.length > 4
+
+            if (isFeatured) {
+              return (
+                <div
+                  key={e.name}
+                  style={{
+                    background: 'linear-gradient(180deg, var(--cream), #fff)',
+                    border: '1px solid var(--line)',
+                    borderRadius: 12,
+                    padding: '28px 24px',
+                    boxShadow: '0 8px 24px rgba(6,28,74,0.08)',
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'inline-block',
+                      background: 'var(--navy-deep)',
+                      color: 'var(--gold-light)',
+                      fontSize: 10.5,
+                      fontWeight: 700,
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      padding: '5px 12px',
+                      borderRadius: 999,
+                      marginBottom: 12,
+                    }}
+                  >
+                    Highlights
+                  </div>
+                  <h3 style={{ fontSize: 20, marginBottom: 6 }}>{e.name}</h3>
+                  {e.note && <p style={{ fontSize: 13.5, color: 'var(--gray)', marginBottom: 18 }}>{e.note}</p>}
+                  <PhotoGallery photos={e.photos!} alt={e.name} />
                 </div>
-              )}
-              {e.photos && e.photos.length > 1 && (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginTop: 12 }}>
-                  {e.photos.map((src) => (
-                    <div key={src} style={{ position: 'relative', width: '100%', paddingTop: '100%', borderRadius: 'var(--radius)', overflow: 'hidden' }}>
-                      <Image src={src} alt={e.name} fill style={{ objectFit: 'cover' }} />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+              )
+            }
+
+            return (
+              <div key={e.name} className="card" style={{ padding: '16px 20px' }}>
+                <h3 style={{ fontSize: 15.5, marginBottom: e.note ? 4 : 0 }}>{e.name}</h3>
+                {e.note && <p style={{ fontSize: 13, color: 'var(--gray)' }}>{e.note}</p>}
+                {e.photos && e.photos.length === 1 && (
+                  <div style={{ position: 'relative', width: '100%', maxWidth: 280, marginTop: 12, borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.15)' }}>
+                    <Image src={e.photos[0]} alt={e.name} width={810} height={1080} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                  </div>
+                )}
+                {e.photos && e.photos.length > 1 && (
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginTop: 12 }}>
+                    {e.photos.map((src) => (
+                      <div key={src} style={{ position: 'relative', width: '100%', paddingTop: '100%', borderRadius: 'var(--radius)', overflow: 'hidden' }}>
+                        <Image src={src} alt={e.name} fill style={{ objectFit: 'cover' }} />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       )}
     </div>
