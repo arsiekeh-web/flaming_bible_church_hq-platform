@@ -188,7 +188,8 @@ export default function FellowshipPage({
           <div>
             <ThanksgivingBanner />
             <EventGroup title="Annual Events" events={EVENTS.filter((e) => e.category === 'Annual')} />
-            <EventGroup title="Past Events" events={EVENTS.filter((e) => e.category === 'Past')} />
+            <YearBanner year="2026" tagline="A Year of Fellowship, Growth & Faith" />
+            <EventGroup title="Past Events" events={EVENTS.filter((e) => e.category === 'Past')} showYear />
             <EventGroup title="Upcoming Events" events={EVENTS.filter((e) => e.category === 'Upcoming')} />
           </div>
         )}
@@ -285,12 +286,59 @@ function BannerDetail({ label, value }: { label: string; value: string }) {
   )
 }
 
+function YearBanner({ year, tagline }: { year: string; tagline: string }) {
+  return (
+    <div style={{ textAlign: 'center', margin: '48px 0 32px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 10 }}>
+        <span style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, transparent, var(--gold))' }} />
+        <span
+          style={{
+            fontFamily: 'var(--font-fraunces)',
+            fontWeight: 700,
+            fontSize: 40,
+            letterSpacing: '0.06em',
+            color: 'var(--navy-deep)',
+          }}
+        >
+          {year}
+        </span>
+        <span style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
+      </div>
+      <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--gold)' }}>
+        {tagline}
+      </div>
+    </div>
+  )
+}
+
+function YearBadge() {
+  return (
+    <span
+      style={{
+        display: 'inline-block',
+        background: 'rgba(198,149,47,0.12)',
+        border: '1px solid var(--gold)',
+        color: 'var(--gold)',
+        fontSize: 10,
+        fontWeight: 700,
+        letterSpacing: '0.06em',
+        padding: '2px 9px',
+        borderRadius: 999,
+      }}
+    >
+      2026
+    </span>
+  )
+}
+
 function EventGroup({
   title,
   events,
+  showYear,
 }: {
   title: string
   events: { name: string; note?: string; photos?: string[] }[]
+  showYear?: boolean
 }) {
   return (
     <div style={{ marginBottom: 32 }}>
@@ -314,21 +362,23 @@ function EventGroup({
                     boxShadow: '0 8px 24px rgba(6,28,74,0.08)',
                   }}
                 >
-                  <div
-                    style={{
-                      display: 'inline-block',
-                      background: 'var(--navy-deep)',
-                      color: 'var(--gold-light)',
-                      fontSize: 10.5,
-                      fontWeight: 700,
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                      padding: '5px 12px',
-                      borderRadius: 999,
-                      marginBottom: 12,
-                    }}
-                  >
-                    Highlights
+                  <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+                    <div
+                      style={{
+                        display: 'inline-block',
+                        background: 'var(--navy-deep)',
+                        color: 'var(--gold-light)',
+                        fontSize: 10.5,
+                        fontWeight: 700,
+                        letterSpacing: '0.1em',
+                        textTransform: 'uppercase',
+                        padding: '5px 12px',
+                        borderRadius: 999,
+                      }}
+                    >
+                      Highlights
+                    </div>
+                    {showYear && <YearBadge />}
                   </div>
                   <h3 style={{ fontSize: 20, marginBottom: 6 }}>{e.name}</h3>
                   {e.note && <p style={{ fontSize: 13.5, color: 'var(--gray)', marginBottom: 18 }}>{e.note}</p>}
@@ -339,7 +389,10 @@ function EventGroup({
 
             return (
               <div key={e.name} className="card" style={{ padding: '16px 20px' }}>
-                <h3 style={{ fontSize: 15.5, marginBottom: e.note ? 4 : 0 }}>{e.name}</h3>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: e.note ? 4 : 0 }}>
+                  <h3 style={{ fontSize: 15.5 }}>{e.name}</h3>
+                  {showYear && <YearBadge />}
+                </div>
                 {e.note && <p style={{ fontSize: 13, color: 'var(--gray)' }}>{e.note}</p>}
                 {e.photos && e.photos.length === 1 && (
                   <div style={{ position: 'relative', width: '100%', maxWidth: 280, marginTop: 12, borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.15)' }}>
