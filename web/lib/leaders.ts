@@ -159,11 +159,11 @@ export const LEADERS: Record<string, Leader & { photo: string }> = {
       },
       {
         heading: 'His Encounter with Christ',
-        text: 'A major turning point in Rev. Macauley\'s life was his encounter with Jesus Christ. When he first met his wife, Rev. Juliete Campbell, she was not yet saved — she later came to know Christ and invited him to accompany her to church. It was there that he had an encounter with Christ and gave his life to Jesus, roughly 36 years ago, around 1990 — a salvation experience that became the foundation for his lifelong commitment to Christian service and ministry.',
+        text: 'A major turning point in Rev. Macauley\'s life was his encounter with Jesus Christ. When he first met his wife, Rev. Juliete Macauley, she was not yet saved — she later came to know Christ and invited him to accompany her to church. It was there that he had an encounter with Christ and gave his life to Jesus, roughly 36 years ago, around 1990 — a salvation experience that became the foundation for his lifelong commitment to Christian service and ministry.',
       },
       {
         heading: 'Marriage and Family',
-        text: 'Rev. Olamide Macauley has been married to Rev. Juliete Campbell for 36 years, since their wedding on 27th January 1990. Their marriage has been a partnership built on faith, family, and service, blessed with three children and four grandchildren. His marriage to Rev. Juliete holds particular significance, as she played an important role in his journey to salvation.',
+        text: 'Rev. Olamide Macauley has been married to Rev. Juliete Macauley for 36 years, since their wedding on 27th January 1990. Their marriage has been a partnership built on faith, family, and service, blessed with three children and four grandchildren. His marriage to Rev. Juliete holds particular significance, as she played an important role in his journey to salvation.',
       },
       {
         heading: 'Ministry and Leadership',
