@@ -213,7 +213,7 @@ export default function FellowshipPage({
           src="/fellowship/ydy/hero.jpg"
           alt="YDY fellowship members"
           fill
-          style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+          style={{ objectFit: 'cover', objectPosition: 'center 45%' }}
           priority
         />
         <div
