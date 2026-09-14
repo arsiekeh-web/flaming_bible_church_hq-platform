@@ -93,7 +93,7 @@ export const LEADERS: Record<string, Leader & { photo: string }> = {
     bio: [
       {
         heading: 'Background and Early Life',
-        text: 'Rev. Dr. Lady Patricia Koroma was born in Freetown, Sierra Leone, on Charles Street and later grew up on Sumner Street, off Benjamin Lane. She is the youngest of six children, born into a family of four boys and two girls. Her late father worked as a dispenser, while her late mother worked as a receptionist for the Government of Sierra Leone. She describes her childhood as a happy one — fun loving, and known to be somewhat mischievous.',
+        text: 'Rev. Dr. Lady Patricia Koroma was born in Freetown, Sierra Leone, at Charles Street and later grew up at Sumner Street, off Benjamin Lane. She is the youngest of six children, born into a family of four boys and two girls. Her late father worked as a dispenser, while her late mother worked as a receptionist for the Government of Sierra Leone. She describes her childhood as a happy one — fun loving, and known to be somewhat mischievous.',
       },
       {
         heading: 'Education',

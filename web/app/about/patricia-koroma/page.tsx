@@ -41,8 +41,8 @@ export default function PatriciaKoromaPage() {
       <div className="section">
         <h2 style={H2}>Background and Early Life</h2>
         <p style={P}>
-          Reverend Dr. Lady Patricia Koroma was born in Freetown, Sierra Leone, on Charles Street and later
-          grew up on Sumner Street, off Benjamin Lane. She is the youngest of six children, born into a family
+          Reverend Dr. Lady Patricia Koroma was born in Freetown, Sierra Leone, at Charles Street and later
+          grew up at Sumner Street, off Benjamin Lane. She is the youngest of six children, born into a family
           of four boys and two girls. Her late father worked as a dispenser, while her late mother worked as a
           receptionist for the Government of Sierra Leone and other government institutions. As the youngest
           child, Lady Patricia describes her childhood as a happy one — fun loving, enjoyed singing, and known
