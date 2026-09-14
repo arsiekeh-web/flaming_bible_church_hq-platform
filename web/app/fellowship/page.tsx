@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { LeaderCard } from '@/components/LeaderModal'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import PhotoGallery from '@/components/PhotoGallery'
+import VideoHighlight from '@/components/VideoHighlight'
 
 const BENJAMIN_TUCKER = {
   name: 'Rev. Benjamin Eugene Ifayomi Tucker',
@@ -279,6 +280,16 @@ export default function FellowshipPage({
         {activeTab === 'events' && (
           <div>
             <YearBanner year="2026" tagline="A Year of Fellowship, Growth & Faith" />
+
+            <div style={{ marginBottom: 40 }}>
+              <VideoHighlight
+                src="/fellowship/ydy/events/highlights/ydy-2026-highlights.mp4"
+                poster="/fellowship/ydy/events/highlights/poster.jpg"
+                title="YDY 2026 Highlights"
+                subtitle="Conference, hiking, cleaning, and everything in between — the year in one reel"
+              />
+            </div>
+
             <EventGroup title="Past Events" events={EVENTS.filter((e) => e.category === 'Past')} showYear />
             <EventGroup title="Upcoming Events" events={EVENTS.filter((e) => e.category === 'Upcoming')} />
           </div>
