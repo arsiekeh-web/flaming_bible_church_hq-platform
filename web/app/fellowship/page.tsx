@@ -96,7 +96,29 @@ const EVENTS: {
       '/fellowship/ydy/events/conference/moment-23.jpg',
     ],
   },
-  { category: 'Upcoming', name: 'Thanksgiving' },
+  {
+    category: 'Past',
+    name: 'Thanksgiving',
+    note: 'YDY Thanksgiving Service — Sunday, September 13 · Flaming Bible Church HQ (Headquarters Church)',
+    photos: [
+      '/fellowship/ydy/events/thanksgiving/1.jpg',
+      '/fellowship/ydy/events/thanksgiving/2.jpg',
+      '/fellowship/ydy/events/thanksgiving/3.jpg',
+      '/fellowship/ydy/events/thanksgiving/4.jpg',
+      '/fellowship/ydy/events/thanksgiving/5.jpg',
+      '/fellowship/ydy/events/thanksgiving/6.jpg',
+      '/fellowship/ydy/events/thanksgiving/7.jpg',
+      '/fellowship/ydy/events/thanksgiving/8.jpg',
+      '/fellowship/ydy/events/thanksgiving/9.jpg',
+      '/fellowship/ydy/events/thanksgiving/10.jpg',
+      '/fellowship/ydy/events/thanksgiving/11.jpg',
+      '/fellowship/ydy/events/thanksgiving/12.jpg',
+      '/fellowship/ydy/events/thanksgiving/13.jpg',
+      '/fellowship/ydy/events/thanksgiving/14.jpg',
+      '/fellowship/ydy/events/thanksgiving/15.jpg',
+      '/fellowship/ydy/events/thanksgiving/16.jpg',
+    ],
+  },
 ]
 
 export const metadata = {
@@ -186,7 +208,6 @@ export default function FellowshipPage({
 
         {activeTab === 'events' && (
           <div>
-            <ThanksgivingBanner />
             <EventGroup title="Annual Events" events={EVENTS.filter((e) => e.category === 'Annual')} />
             <YearBanner year="2026" tagline="A Year of Fellowship, Growth & Faith" />
             <EventGroup title="Past Events" events={EVENTS.filter((e) => e.category === 'Past')} showYear />
@@ -216,73 +237,6 @@ export default function FellowshipPage({
         )}
       </div>
     </main>
-  )
-}
-
-function ThanksgivingBanner() {
-  return (
-    <div
-      style={{
-        position: 'relative',
-        overflow: 'hidden',
-        borderRadius: 10,
-        background: 'linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, var(--crimson-deep) 100%)',
-        padding: '36px 28px',
-        marginBottom: 32,
-        boxShadow: '0 10px 30px rgba(6,28,74,0.25)',
-      }}
-    >
-      {/* decorative glow accents */}
-      <div style={{ position: 'absolute', top: -60, right: -60, width: 200, height: 200, borderRadius: '50%', background: 'radial-gradient(circle, rgba(230,196,120,0.25), transparent 70%)' }} />
-      <div style={{ position: 'absolute', bottom: -80, left: -40, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(122,15,38,0.35), transparent 70%)' }} />
-
-      <div style={{ position: 'relative', maxWidth: 620 }}>
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 6,
-            background: 'rgba(232,200,120,0.15)',
-            border: '1px solid rgba(232,200,120,0.4)',
-            color: 'var(--gold-light)',
-            fontSize: 11.5,
-            fontWeight: 700,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            padding: '6px 14px',
-            borderRadius: 999,
-            marginBottom: 16,
-          }}
-        >
-          ✨ Save the Date
-        </div>
-
-        <h3 style={{ color: '#fff', fontSize: 26, lineHeight: 1.2, marginBottom: 10 }}>
-          YDY Thanksgiving Service
-        </h3>
-        <p style={{ color: '#cfd8ee', fontSize: 14.5, lineHeight: 1.7, marginBottom: 22, maxWidth: 480 }}>
-          Join the Young Dynamic Youth Fellowship as we come together in gratitude to celebrate
-          God&apos;s faithfulness — a time of praise, testimony, and thanksgiving as a family.
-        </p>
-
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, marginBottom: 4 }}>
-          <BannerDetail label="Date" value="Sunday, September 13" />
-          <BannerDetail label="Venue" value="Flaming Bible Church HQ (Headquarters Church)" />
-          <BannerDetail label="Organized by" value="Young Dynamic Youth (YDY)" />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function BannerDetail({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <div style={{ color: 'var(--gold-light)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 3 }}>
-        {label}
-      </div>
-      <div style={{ color: '#fff', fontSize: 14, fontWeight: 600 }}>{value}</div>
-    </div>
   )
 }
 
