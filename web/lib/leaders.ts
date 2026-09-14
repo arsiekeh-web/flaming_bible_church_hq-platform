@@ -151,7 +151,7 @@ export const LEADERS: Record<string, Leader & { photo: string }> = {
     role: 'Main Pastor, Headquarters Church',
     bio: [
       {
-        text: 'Born on 28th October 1961, Rev. Olamide Macauley is a pastor, husband, father, grandfather, and dedicated servant of God whose life reflects a journey of faith, education, family, leadership, and service.',
+        text: 'Born on 20th October 1961, Rev. Olamide Macauley is a pastor, husband, father, grandfather, and dedicated servant of God whose life reflects a journey of faith, education, family, leadership, and service.',
       },
       {
         heading: 'Early Life and Education',
