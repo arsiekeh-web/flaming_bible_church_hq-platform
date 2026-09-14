@@ -28,23 +28,30 @@ const EXECUTIVES = [
 // Static event listing — each event's photos live under
 // /public/fellowship/ydy/events/<event-folder>/
 const EVENTS: {
-  category: 'Annual' | 'Past' | 'Upcoming'
+  category: 'Past' | 'Upcoming'
   name: string
   note?: string
   photos?: string[]
 }[] = [
   {
-    category: 'Annual',
+    category: 'Past',
     name: 'Monthly Bible Study',
+    note: 'YDY Monthly Bible Study — members gathering to study and discuss Scripture together',
     photos: [
       '/fellowship/ydy/events/bible-study/1.jpg',
       '/fellowship/ydy/events/bible-study/2.jpg',
       '/fellowship/ydy/events/bible-study/3.jpg',
       '/fellowship/ydy/events/bible-study/4.jpg',
+      '/fellowship/ydy/events/bible-study/5.jpg',
+      '/fellowship/ydy/events/bible-study/6.jpg',
+      '/fellowship/ydy/events/bible-study/7.jpg',
+      '/fellowship/ydy/events/bible-study/8.jpg',
+      '/fellowship/ydy/events/bible-study/9.jpg',
+      '/fellowship/ydy/events/bible-study/10.jpg',
+      '/fellowship/ydy/events/bible-study/11.jpg',
+      '/fellowship/ydy/events/bible-study/12.jpg',
     ],
   },
-  { category: 'Annual', name: 'Conference' },
-  { category: 'Annual', name: 'Thanksgiving' },
   {
     category: 'Past',
     name: 'Annual Cleaning',
@@ -271,7 +278,6 @@ export default function FellowshipPage({
 
         {activeTab === 'events' && (
           <div>
-            <EventGroup title="Annual Events" events={EVENTS.filter((e) => e.category === 'Annual')} />
             <YearBanner year="2026" tagline="A Year of Fellowship, Growth & Faith" />
             <EventGroup title="Past Events" events={EVENTS.filter((e) => e.category === 'Past')} showYear />
             <EventGroup title="Upcoming Events" events={EVENTS.filter((e) => e.category === 'Upcoming')} />
