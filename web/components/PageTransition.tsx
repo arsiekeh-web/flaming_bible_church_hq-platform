@@ -12,7 +12,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
       setRevealed(true)
       return
     }
-    const timer = setTimeout(() => setRevealed(true), 260)
+    const timer = setTimeout(() => setRevealed(true), 400)
     return () => clearTimeout(timer)
   }, [])
 
