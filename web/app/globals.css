@@ -39,6 +39,63 @@ h4 {
   letter-spacing: -0.01em;
 }
 
+/* Page transition overlay — plays a brief branded reveal on every route
+   change (App Router remounts template.tsx per navigation, which is what
+   drives this). Kept intentionally short so it reads as a flourish, not
+   a real loading wait. See components/PageTransition.tsx. */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 450ms ease, visibility 0s linear 0s;
+}
+
+.page-transition-overlay.is-revealed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 450ms ease, visibility 0s linear 450ms;
+}
+
+.page-transition-mark {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 0 6px rgba(198, 149, 47, 0.15);
+  animation: page-transition-pulse 900ms ease-in-out infinite;
+}
+
+@keyframes page-transition-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-overlay,
+  .page-transition-overlay.is-revealed {
+    transition: none;
+  }
+  .page-transition-mark {
+    animation: none;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
