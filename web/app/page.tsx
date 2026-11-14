@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import MapEmbed from '@/components/MapEmbed'
 import Image from 'next/image'
 import { LeaderCard } from '@/components/LeaderModal'
 import { LEADERS } from '@/lib/leaders'
@@ -103,13 +104,10 @@ export default function Home() {
               Get Directions →
             </a>
             <div style={{ marginTop: 20, borderRadius: 6, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }}>
-              <iframe
+              <MapEmbed
                 title="Map to Flaming Bible Church HQ"
                 src="https://www.google.com/maps?q=Syke+Street,+Ascension+Town,+Freetown,+Sierra+Leone&output=embed"
-                height="220"
-                style={{ border: 0, display: 'block', width: '100%' }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                height={220}
               />
             </div>
           </div>

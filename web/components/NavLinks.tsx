@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 const LINKS = [
   { href: '/', label: 'Home' },
@@ -13,13 +14,17 @@ const LINKS = [
 
 export default function NavLinks() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  // Home is exact-match; other links are active for their sub-pages too
+  // (e.g. /about/bishop-koroma keeps "About" highlighted).
+  const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/'))
 
   return (
     <>
       {/* Desktop links — hidden on mobile via .nav-links CSS */}
       <div className="nav-links">
         {LINKS.map((l) => (
-          <Link key={l.href} href={l.href}>
+          <Link key={l.href} href={l.href} aria-current={isActive(l.href) ? 'page' : undefined}>
             {l.label}
           </Link>
         ))}
@@ -38,7 +43,7 @@ export default function NavLinks() {
       {open && (
         <div className="nav-mobile-menu">
           {LINKS.map((l) => (
-            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)} aria-current={isActive(l.href) ? 'page' : undefined}>
               {l.label}
             </Link>
           ))}

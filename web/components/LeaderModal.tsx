@@ -95,7 +95,7 @@ export function LeaderCard({ leader, photo }: { leader: Leader; photo?: string }
 
             {photo && (
               <div style={{ position: 'relative', width: 84, height: 84, borderRadius: '50%', overflow: 'hidden', marginBottom: 16 }}>
-                <Image src={photo} alt={leader.name} fill style={{ objectFit: 'cover' }} />
+                <Image src={photo} alt={leader.name} fill sizes="84px" style={{ objectFit: 'cover' }} />
               </div>
             )}
 

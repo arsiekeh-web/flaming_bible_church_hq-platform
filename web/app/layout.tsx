@@ -1,20 +1,23 @@
-import { Fraunces, Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import './globals.css'
 
-// Real font loading — matches the approved prototype (Fraunces for display,
-// Inter for body), not system fonts.
-const fraunces = Fraunces({
-  subsets: ['latin'],
+// Fonts are self-hosted (variable WOFF2 in app/fonts/) so builds never depend
+// on fetching Google Fonts, and visitors make no third-party font request.
+// Same families as the approved prototype: Fraunces (display), Inter (body).
+const fraunces = localFont({
+  src: './fonts/Fraunces-Variable.woff2',
   variable: '--font-fraunces',
-  weight: ['400', '600', '700', '900'],
+  weight: '100 900',
+  display: 'swap',
 })
-const inter = Inter({
-  subsets: ['latin'],
+const inter = localFont({
+  src: './fonts/Inter-Variable.woff2',
   variable: '--font-inter',
-  weight: ['400', '500', '600', '700'],
+  weight: '100 900',
+  display: 'swap',
 })
 
 export const metadata = {

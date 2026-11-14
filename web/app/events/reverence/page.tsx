@@ -154,7 +154,7 @@ export default function ReverencePage() {
 function GalleryImage({ src, alt }: { src: string; alt: string }) {
   return (
     <div style={{ position: 'relative', width: '100%', paddingTop: '125%', borderRadius: 'var(--radius)', overflow: 'hidden' }}>
-      <Image src={src} alt={alt} fill style={{ objectFit: 'cover' }} />
+      <Image src={src} alt={alt} fill sizes="(max-width: 700px) 33vw, 360px" style={{ objectFit: 'cover' }} />
     </div>
   )
 }
@@ -163,7 +163,7 @@ function YearPoster({ src, year, theme }: { src: string; year: string; theme: st
   return (
     <div>
       <div style={{ position: 'relative', width: '100%', paddingTop: '100%', borderRadius: 'var(--radius)', overflow: 'hidden', marginBottom: 8 }}>
-        <Image src={src} alt={`Reverence ${year} — ${theme}`} fill style={{ objectFit: 'cover' }} />
+        <Image src={src} alt={`Reverence ${year} — ${theme}`} fill sizes="(max-width: 700px) 50vw, 534px" style={{ objectFit: 'cover' }} />
       </div>
       <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--navy)' }}>{year}</div>
       <div style={{ fontSize: 12, color: 'var(--gray)' }}>{theme}</div>
