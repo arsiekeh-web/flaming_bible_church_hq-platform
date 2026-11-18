@@ -4,6 +4,7 @@ import type { Leader } from '@/components/LeaderModal'
 // and the About page so there's only one copy to edit.
 export const LEADERS: Record<string, Leader & { photo: string }> = {
   bishop: {
+    fullBioHref: '/about/bishop-koroma',
     photo: '/about/bishop-solo.png',
     name: 'Bishop Dr. Frederick Abubakarr Sidique Sulaiman Koroma',
     role: 'Founder & General Overseer',
@@ -87,6 +88,7 @@ export const LEADERS: Record<string, Leader & { photo: string }> = {
     ],
   },
   patricia: {
+    fullBioHref: '/about/patricia-koroma',
     photo: '/about/patricia-solo.png',
     name: 'Rev. Dr. Lady Patricia Koroma',
     role: 'General Overseer',

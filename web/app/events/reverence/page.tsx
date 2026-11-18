@@ -114,16 +114,16 @@ export default function ReverencePage() {
       {/* --- Gallery --- */}
       <div id="gallery" className="section" style={{ paddingTop: 0 }}>
         <h2 style={{ fontSize: 22, marginBottom: 20 }}>Moments from the Night</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
-          <GalleryImage src="/events/reverence/congregation-2025.jpg" alt="Ministers and congregation gathered for Reverence" />
-          <GalleryImage src="/events/reverence/award-night.jpg" alt="Recognition and appreciation on the Reverence stage" />
-          <GalleryImage src="/events/reverence/singer.jpg" alt="Worship leader ministering on stage" />
-          <GalleryImage src="/events/reverence/choir-1.jpg" alt="Choir and worship team leading praise" />
-          <GalleryImage src="/events/reverence/worship-team.jpg" alt="Worship team in full praise" />
-          <GalleryImage src="/events/reverence/congregation.jpg" alt="Congregation gathered for Reverence" />
-          <GalleryImage src="/events/reverence/worship-2025.jpg" alt="A worshipper raising hands during Reverence 2025" />
-          <GalleryImage src="/events/reverence/patricia-throne.jpg" alt="Rev. Dr. Lady Patricia Koroma, host of Reverence" />
-          <GalleryImage src="/events/reverence/team-2025.jpg" alt="Reverence 2025 hosting team on stage" />
+        <div className="reverence-gallery-grid">
+          <GalleryImage src="/events/reverence/gallery/choir-stage.jpg" alt="Choir and worship team on the Reverence stage" />
+          <GalleryImage src="/events/reverence/gallery/lady-patricia-throne.jpg" alt="Rev. Dr. Lady Patricia Koroma at a Reverence gathering" />
+          <GalleryImage src="/events/reverence/gallery/leaders-portrait.jpg" alt="Church leaders gathered for Reverence" />
+          <GalleryImage src="/events/reverence/gallery/reverence-2021-flyer.jpg" alt="Reverence 2021 event poster" />
+          <GalleryImage src="/events/reverence/gallery/reverence-2022-flyer.jpg" alt="Reverence 2022 event poster" />
+          <GalleryImage src="/events/reverence/gallery/reverence-2024-flyer.jpg" alt="Reverence 2024 event poster" />
+          <GalleryImage src="/events/reverence/gallery/reverence-2025-team.jpg" alt="Reverence gathering team on stage" />
+          <GalleryImage src="/events/reverence/gallery/reverence-2026-flyer.jpg" alt="Reverence 2026 event poster" />
+          <GalleryImage src="/events/reverence/gallery/worship-5th-anniversary.jpg" alt="Praise and worship during a Reverence gathering" />
         </div>
       </div>
 
