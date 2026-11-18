@@ -437,7 +437,7 @@ function EventGroup({
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginTop: 12 }}>
                     {e.photos.map((src) => (
                       <div key={src} style={{ position: 'relative', width: '100%', paddingTop: '100%', borderRadius: 'var(--radius)', overflow: 'hidden' }}>
-                        <Image src={src} alt={e.name} fill style={{ objectFit: 'cover' }} />
+                        <Image src={src} alt={e.name} fill sizes="(max-width: 700px) 30vw, 230px" style={{ objectFit: 'cover' }} />
                       </div>
                     ))}
                   </div>
@@ -465,7 +465,7 @@ function PersonCard({
   return (
     <div style={{ textAlign: 'center' }}>
       <div style={{ position: 'relative', width: '100%', paddingTop: '100%', borderRadius: 'var(--radius)', overflow: 'hidden', marginBottom: 10 }}>
-        <Image src={photo} alt={name} fill style={{ objectFit: 'cover' }} />
+        <Image src={photo} alt={name} fill sizes="(max-width: 700px) 90vw, 240px" style={{ objectFit: 'cover' }} />
       </div>
       <p style={{ fontWeight: 600, fontSize: 14 }}>{name}</p>
       <p style={{ color: 'var(--gray)', fontSize: 12.5 }}>{role}</p>

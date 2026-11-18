@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export type BioBlock = { heading?: string; text: string }
 export type Leader = {
@@ -9,6 +10,7 @@ export type Leader = {
   role: string
   bio: string | BioBlock[]
   photo?: string
+  fullBioHref?: string
 }
 
 function getPreviewText(bio: string | BioBlock[]): string {
@@ -95,7 +97,7 @@ export function LeaderCard({ leader, photo }: { leader: Leader; photo?: string }
 
             {photo && (
               <div style={{ position: 'relative', width: 84, height: 84, borderRadius: '50%', overflow: 'hidden', marginBottom: 16 }}>
-                <Image src={photo} alt={leader.name} fill style={{ objectFit: 'cover' }} />
+                <Image src={photo} alt={leader.name} fill sizes="84px" style={{ objectFit: 'cover' }} />
               </div>
             )}
 
@@ -115,6 +117,11 @@ export function LeaderCard({ leader, photo }: { leader: Leader; photo?: string }
                   <p style={{ fontSize: 14.5, lineHeight: 1.8, color: 'var(--ink)' }}>{block.text}</p>
                 </div>
               ))
+            )}
+            {leader.fullBioHref && (
+              <Link href={leader.fullBioHref} className="btn btn-gold leader-full-bio-link">
+                Read full biography <span aria-hidden="true">→</span>
+              </Link>
             )}
           </div>
         </div>

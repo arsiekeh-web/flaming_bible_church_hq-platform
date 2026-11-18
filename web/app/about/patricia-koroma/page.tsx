@@ -27,7 +27,7 @@ export default function PatriciaKoromaPage() {
 
       <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px', display: 'flex', gap: 24, alignItems: 'center', flexWrap: 'wrap' }}>
         <div style={{ position: 'relative', width: 96, height: 96, borderRadius: '50%', overflow: 'hidden', flexShrink: 0, border: '3px solid var(--gold-light)' }}>
-          <Image src="/about/patricia-solo.png" alt="Rev. Dr. Lady Patricia Koroma" fill style={{ objectFit: 'cover' }} />
+          <Image src="/about/patricia-solo.png" alt="Rev. Dr. Lady Patricia Koroma" fill sizes="96px" style={{ objectFit: 'cover' }} />
         </div>
         <div>
           <div style={{ color: 'var(--gold-light)', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6 }}>

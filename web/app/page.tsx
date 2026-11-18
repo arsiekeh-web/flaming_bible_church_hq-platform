@@ -1,194 +1,195 @@
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import MapEmbed from '@/components/MapEmbed'
 import { LeaderCard } from '@/components/LeaderModal'
 import { LEADERS } from '@/lib/leaders'
-
-// Static content — no live database. Update these arrays by hand when
-// something changes; there's no admin dashboard anymore.
-const UPCOMING_EVENTS = [
-  { id: 'reverence-5', title: 'Reverence', when: 'Annual — Ascension season', membersOnly: false },
-]
 
 export const metadata = {
   title: 'Flaming Bible Church HQ | Freetown, Sierra Leone',
   description:
-    'Flaming Bible Church HQ (Flaming Evangelical Ministries International) is a Bible-believing church in Ascension Town, Freetown, Sierra Leone. Join us for Sunday Bible Exposition & Divine Service, Mid-Week Breakthrough Explosion Service, Friday Holy Ghost Prayer, and more. "How shall they hear without a preacher?" — Romans 10:14.',
+    'Flaming Bible Church HQ (Flaming Evangelical Ministries International) is a Bible-believing church in Ascension Town, Freetown, Sierra Leone. Join us for Sunday Bible Exposition & Divine Service, Mid-Week Breakthrough Explosion Service, Friday Holy Ghost Prayer, and more. “How shall they hear without a preacher?” — Romans 10:14.',
 }
+
+const DIRECTIONS_URL =
+  'https://www.google.com/maps/search/?api=1&query=Syke+Street,+Ascension+Town,+Freetown,+Sierra+Leone'
 
 export default function Home() {
   return (
     <main>
-      {/* --- Hero --- */}
-      <div
-        style={{
-          position: 'relative',
-          minHeight: 420,
-          display: 'flex',
-          alignItems: 'flex-end',
-        }}
-      >
+      <section className="home-hero">
         <Image
-          src="/about/general-overseers-joint.jpg"
-          alt="Bishop Dr. Frederick Abu Sidique Koroma and Rev. Dr. Lady Patricia Koroma, General Overseers of Flaming Bible Church HQ"
+          src="/home-worship.jpg"
+          alt="The congregation gathered for worship at Flaming Bible Church HQ"
           fill
-          style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
           priority
+          sizes="100vw"
+          className="home-hero-image"
         />
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(160deg, rgba(6,28,74,0.88), rgba(74,7,9,0.82))',
-          }}
-        />
-        <div style={{ position: 'relative', padding: '64px 48px 56px', maxWidth: 720, color: '#fff' }}>
-          <div style={{ color: 'var(--gold-light)', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 16 }}>
-            🔥 Freetown, Sierra Leone
-          </div>
-          <h1 style={{ fontSize: 44, lineHeight: 1.05, marginBottom: 6 }}>
-            Flaming Bible Church HQ
-          </h1>
-          <p style={{ color: 'var(--gold-light)', fontSize: 13, marginBottom: 4, fontWeight: 500, opacity: 0.85 }}>
-            Flaming Evangelical Ministries International
-          </p>
-          <p style={{ color: 'var(--gold-light)', fontSize: 14, marginBottom: 18, fontWeight: 500 }}>
-            Ascension Town / Syke Street, Freetown, Sierra Leone
-          </p>
-          <p style={{ fontFamily: 'var(--font-fraunces)', fontStyle: 'italic', color: 'var(--gold-light)', fontSize: 16, marginBottom: 28 }}>
-            &ldquo;How shall they hear without a preacher?&rdquo; — Romans 10:14
-          </p>
-          <div style={{ display: 'flex', gap: 14 }}>
-            <Link href="/sermons" className="btn btn-gold">
-              Watch & Listen
-            </Link>
-            <Link href="#visit" className="btn btn-outline">
-              Plan Your Visit
-            </Link>
+        <div className="home-hero-shade" />
+        <div className="home-hero-content">
+          <div className="eyebrow home-hero-eyebrow">Freetown, Sierra Leone</div>
+          <h1>Flaming Bible Church HQ</h1>
+          <p className="home-hero-ministry">Flaming Evangelical Ministries International</p>
+          <p className="home-hero-address">Ascension Town / Syke Street, Freetown, Sierra Leone</p>
+          <p className="home-hero-motto">“How shall they hear without a preacher?” — Romans 10:14</p>
+          <div className="home-hero-actions">
+            <Link href="/sermons" className="btn btn-gold">Watch &amp; Listen</Link>
+            <Link href="#visit" className="btn btn-outline">Plan Your Visit</Link>
           </div>
         </div>
-      </div>
+        <span className="home-hero-rule" aria-hidden="true" />
+      </section>
 
-      {/* --- Welcome / Intro (SEO copy) --- */}
-      <div className="section" style={{ maxWidth: 780, margin: '0 auto', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 22, marginBottom: 14 }}>
-          A Bible-Believing Church in Freetown, Sierra Leone
-        </h2>
-        <p style={{ lineHeight: 1.8, color: 'var(--gray)' }}>
-          Flaming Bible Church HQ (Flaming Evangelical Ministries International) is an evangelical, Bible-believing church located in
-          Ascension Town, Freetown, Sierra Leone. Whether you're searching for a church near
-          Ascension Town, a place of evangelism and deliverance ministry in Freetown, or simply a
-          spiritual home, our doors are open. From Sunday worship and Bible study to midweek
-          prayer meetings, we welcome believers and seekers alike to experience the Gospel of
-          Jesus Christ preached without compromise.
+      <section className="section home-intro">
+        <div className="eyebrow">A church in the heart of Freetown</div>
+        <h2>A Bible-Believing Church in Freetown, Sierra Leone</h2>
+        <p>
+          Flaming Bible Church HQ (Flaming Evangelical Ministries International) is an evangelical,
+          Bible-believing church located in Ascension Town, Freetown, Sierra Leone. Whether you're
+          searching for a church near Ascension Town, a place of evangelism and deliverance ministry
+          in Freetown, or simply a spiritual home, our doors are open. From Sunday worship and Bible
+          study to midweek prayer meetings, we welcome believers and seekers alike to experience the
+          Gospel of Jesus Christ preached without compromise.
         </p>
-      </div>
+      </section>
 
-      {/* --- Visit Us --- */}
-      <div id="visit" style={{ background: 'var(--navy-deep)', padding: 48 }}>
-        <div style={{ maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40 }}>
-          <div>
-            <div style={{ color: 'var(--gold-light)', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
-              📍 Visit Us
-            </div>
-            <h2 style={{ color: '#fff', fontSize: 24, marginBottom: 14 }}>Ascension Town / Syke Street, Freetown</h2>
-            <p style={{ color: '#cfd8ee', fontSize: 14.5, lineHeight: 1.6 }}>
-              Syke Street, Ascension Town, Freetown, Sierra Leone
-            </p>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Syke+Street,+Ascension+Town,+Freetown,+Sierra+Leone"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: 'inline-block', color: 'var(--gold-light)', fontWeight: 600, fontSize: 13.5, marginTop: 10 }}
-            >
-              Get Directions →
-            </a>
-            <div style={{ marginTop: 20, borderRadius: 6, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }}>
-              <iframe
-                title="Map to Flaming Bible Church HQ"
-                src="https://www.google.com/maps?q=Syke+Street,+Ascension+Town,+Freetown,+Sierra+Leone&output=embed"
-                height="220"
-                style={{ border: 0, display: 'block', width: '100%' }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, color: '#cfd8ee' }}>
-            <ServiceTime title="Sundays · 8:00 – 8:25 AM" label="Bible Exposition" />
-            <ServiceTime title="Sundays · 8:30 – 10:30 AM" label="Divine Service" />
-            <ServiceTime title="Wednesdays · 5:30 PM" label="Mid-Week Breakthrough Explosion Service" />
-            <ServiceTime title="Fridays · 5:30 PM" label="Holy Ghost Prayer" />
+      <section className="home-worship">
+        <div className="home-worship-photo">
+          <Image
+            src="/events/reverence/worship-team.jpg"
+            alt="Worship team leading a Reverence gathering"
+            fill
+            sizes="(max-width: 860px) 100vw, 50vw"
+            style={{ objectFit: 'cover', objectPosition: 'center 38%' }}
+          />
+        </div>
+        <div className="home-worship-copy">
+          <div className="eyebrow">Worship &amp; church life</div>
+          <h2>Gather with us</h2>
+          <p>Join us for worship, Bible teaching, and prayer throughout the week.</p>
+          <div className="service-list">
+            <ServiceTime title="Sunday · 8:30 – 10:30 AM" label="Divine Service" featured />
+            <ServiceTime title="Sunday · 8:00 – 8:25 AM" label="Bible Exposition" />
+            <ServiceTime title="Wednesday · 5:30 PM" label="Mid-Week Breakthrough Explosion Service" />
+            <ServiceTime title="Friday · 5:30 PM" label="Holy Ghost Prayer" />
             <ServiceTime title="Last Wednesday of Every Month · 5:30 PM" label="Solution on a Wednesday Night" />
             <ServiceTime title="Every 3rd Friday · 11:00 PM – 5:30 AM" label="All-Night of Prevailing Prayers" />
           </div>
+          <Link href="/fellowship" className="text-link">Explore church life and fellowship <span aria-hidden="true">→</span></Link>
         </div>
-      </div>
+      </section>
 
-      {/* --- Leadership --- */}
-      <div className="section">
-        <h2 style={{ fontSize: 26, marginBottom: 6 }}>Leadership</h2>
-        <p style={{ fontSize: 12.5, color: 'var(--gray)', marginBottom: 24 }}>Tap a card to read the full biography.</p>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
+      <section className="section home-ministries">
+        <div className="home-section-heading">
+          <div>
+            <div className="eyebrow">Find your place</div>
+            <h2>Ministries &amp; fellowship</h2>
+          </div>
+          <Link href="/fellowship" className="text-link">Explore YDY <span aria-hidden="true">→</span></Link>
+        </div>
+        <div className="path-card-grid">
+          <PathCard href="/about" index="01" title="Our Church" text="Learn about our church, mission, and leadership." />
+          <PathCard href="/fellowship" index="02" title="Fellowship" text="Meet the Young Dynamic Youth Fellowship and explore its activities." />
+          <PathCard href="#visit" index="03" title="Plan Your Visit" text="Find our headquarters and service times in Freetown." />
+        </div>
+        <div className="home-leadership-heading">
+          <h3>Leadership</h3>
+          <Link href="/about" className="text-link">Meet our leaders <span aria-hidden="true">→</span></Link>
+        </div>
+        <div className="home-leader-grid">
           <LeaderCard photo={LEADERS.bishop.photo} leader={LEADERS.bishop} />
           <LeaderCard photo={LEADERS.patricia.photo} leader={LEADERS.patricia} />
           <LeaderCard photo={LEADERS.pastor.photo} leader={LEADERS.pastor} />
         </div>
-        <div style={{ marginTop: 16 }}>
-          <Link href="/about" style={{ fontSize: 13, fontWeight: 600, color: 'var(--navy)', borderBottom: '1.5px solid var(--gold)' }}>
-            More about our leadership →
-          </Link>
-        </div>
-      </div>
+      </section>
 
-      {/* --- Upcoming Events (static) --- */}
-      <div className="section">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 22 }}>
-          <h2 style={{ fontSize: 24 }}>Upcoming Events</h2>
-          <Link href="/events" style={{ fontSize: 13, fontWeight: 600, color: 'var(--navy)', borderBottom: '1.5px solid var(--gold)' }}>
-            See all events →
-          </Link>
+      <section className="home-media">
+        <div className="home-media-inner">
+          <div className="home-section-heading">
+            <div>
+              <div className="eyebrow">Messages and services</div>
+              <h2>Watch &amp; Listen</h2>
+            </div>
+            <Link href="/sermons" className="text-link">All ways to watch <span aria-hidden="true">→</span></Link>
+          </div>
+          <div className="media-card-grid">
+            <a href="https://www.facebook.com/share/1C8zu2wYax/" target="_blank" rel="noopener noreferrer" className="media-card">
+              <span className="media-card-icon" aria-hidden="true">f</span>
+              <span className="media-card-label">Facebook</span>
+              <strong>Live services, photos, and updates</strong>
+              <span className="media-card-cta">Visit Facebook <span aria-hidden="true">↗</span></span>
+            </a>
+            <a href="https://www.youtube.com/live/4AQhTvm6N74?si=oiY_r_gZvxils_5z" target="_blank" rel="noopener noreferrer" className="media-card">
+              <span className="media-card-icon media-card-play" aria-hidden="true">▶</span>
+              <span className="media-card-label">YouTube video</span>
+              <strong>Watch a service and explore more messages</strong>
+              <span className="media-card-cta">Watch on YouTube <span aria-hidden="true">↗</span></span>
+            </a>
+          </div>
+          <p className="home-media-note">These links open in a new tab.</p>
         </div>
+      </section>
 
-        <div className="grid3">
-          {UPCOMING_EVENTS.map((e) => (
-            <Link key={e.id} href="/events" className="card" style={{ display: 'block' }}>
-              <div className="card-body">
-                <span className={e.membersOnly ? 'pill pill-member' : 'pill pill-public'}>
-                  {e.membersOnly ? 'Members Only' : 'Public'}
-                </span>
-                <h3>{e.title}</h3>
-                <div className="meta">{e.when}</div>
-              </div>
-            </Link>
-          ))}
+      <section className="section home-events">
+        <div className="home-section-heading">
+          <div>
+            <div className="eyebrow">Come together</div>
+            <h2>Events</h2>
+          </div>
+          <Link href="/events" className="text-link">All events <span aria-hidden="true">→</span></Link>
         </div>
-      </div>
+        <Link href="/events/reverence" className="featured-event">
+          <div className="featured-event-image">
+            <Image src="/events/reverence/hero.jpg" alt="Reverence worship gathering" fill sizes="(max-width: 860px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+          </div>
+          <div className="featured-event-copy">
+            <span className="eyebrow">Featured gathering</span>
+            <h3>Reverence</h3>
+            <p>An annual worship gathering of Flaming Evangelical Ministries, directing worship to the Lord.</p>
+            <span className="text-link">Discover Reverence <span aria-hidden="true">→</span></span>
+          </div>
+        </Link>
+        <p className="home-events-note">No other upcoming events are listed right now. Check back for announcements.</p>
+      </section>
 
-      {/* --- Watch & Listen --- */}
-      <div className="section">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 22 }}>
-          <h2 style={{ fontSize: 24 }}>Watch & Listen</h2>
-          <Link href="/sermons" style={{ fontSize: 13, fontWeight: 600, color: 'var(--navy)', borderBottom: '1.5px solid var(--gold)' }}>
-            All ways to watch →
-          </Link>
+      <section id="visit" className="home-visit">
+        <div className="home-visit-inner">
+          <div className="home-visit-details">
+            <div className="eyebrow">Visit &amp; connect</div>
+            <h2>We’d be glad to welcome you.</h2>
+            <p className="home-visit-address">Syke Street, Ascension Town<br />Freetown, Sierra Leone</p>
+            <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">Get Directions <span aria-hidden="true">↗</span></a>
+            <a className="home-contact" href="mailto:flamingbiblechurchhq@yahoo.com">flamingbiblechurchhq@yahoo.com</a>
+          </div>
+          <div className="home-visit-map">
+            <MapEmbed
+              title="Map to Flaming Bible Church HQ"
+              src="https://www.google.com/maps?q=Syke+Street,+Ascension+Town,+Freetown,+Sierra+Leone&output=embed"
+              height={320}
+            />
+          </div>
         </div>
-        <p style={{ color: 'var(--gray)', fontSize: 14.5, lineHeight: 1.7, maxWidth: 640 }}>
-          Services stream live on our Facebook page and YouTube channel. Catch up on past services and messages any time.
-        </p>
-      </div>
-
-      <footer style={{ background: 'var(--navy-deep)', color: '#c9d2e8', padding: '40px 48px', fontSize: 13 }}>
-        © 2026 Flaming Bible Church HQ — Freetown, Sierra Leone
-      </footer>
+      </section>
     </main>
   )
 }
 
-function ServiceTime({ title, label }: { title: string; label: string }) {
+function ServiceTime({ title, label, featured = false }: { title: string; label: string; featured?: boolean }) {
   return (
-    <div>
-      <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 15, fontWeight: 600, color: 'var(--gold-light)' }}>{title}</div>
-      <div style={{ fontSize: 13 }}>{label}</div>
+    <div className={`service-time${featured ? ' service-time-featured' : ''}`}>
+      <span className="service-time-day">{title}</span>
+      <span className="service-time-name">{label}</span>
     </div>
+  )
+}
+
+function PathCard({ href, index, title, text }: { href: string; index: string; title: string; text: string }) {
+  return (
+    <Link href={href} className="path-card">
+      <span className="path-card-index">{index}</span>
+      <strong>{title}</strong>
+      <span>{text}</span>
+      <span className="path-card-arrow" aria-hidden="true">↗</span>
+    </Link>
   )
 }

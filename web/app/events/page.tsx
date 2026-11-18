@@ -35,7 +35,7 @@ export default function EventsPage() {
           </div>
           <div>
             <h3 style={{ fontSize: 17 }}>Reverence</h3>
-            <p style={{ fontSize: 13, color: 'var(--gray)', marginTop: 4 }}>About, photo gallery, and shop →</p>
+            <p style={{ fontSize: 13, color: 'var(--gray)', marginTop: 4 }}>About and photo gallery →</p>
           </div>
         </Link>
       </div>
