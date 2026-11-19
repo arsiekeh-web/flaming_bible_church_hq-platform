@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import RelatedContent from '@/components/RelatedContent'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata = {
@@ -248,15 +249,13 @@ export default function BishopKoromaPage() {
         <p style={QUOTE}>&ldquo;The ambition of a man is not known unless he is allowed to function in that capacity.&rdquo;</p>
         <p style={QUOTE}>&ldquo;If you do not update your Christian life you will become outdated.&rdquo;</p>
 
-        <div style={{ marginTop: 40, display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-          <Link href="/about/patricia-koroma" style={{ color: 'var(--navy)', fontWeight: 600, fontSize: 14 }}>
-            Read Rev. Dr. Lady Patricia Koroma&apos;s biography →
-          </Link>
-          <Link href="/about" style={{ color: 'var(--navy)', fontWeight: 600, fontSize: 14 }}>
-            ← Back to About
-          </Link>
-        </div>
       </div>
+      <RelatedContent
+          items={[
+            { href: '/about/patricia-koroma', title: 'Rev. Dr. Lady Patricia Koroma', description: 'Read the full biography of the church leader and Reverence host.', action: 'Read biography' },
+            { href: '/about', title: 'About the Church', description: 'Return to the church overview and leadership profiles.', action: 'Explore About' },
+          ]}
+      />
     </main>
   )
 }
