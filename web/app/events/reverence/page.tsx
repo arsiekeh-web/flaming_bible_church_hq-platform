@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import PageMasthead from '@/components/PageMasthead'
+import RelatedContent from '@/components/RelatedContent'
 
 export const metadata = {
   title: 'Reverence',
@@ -13,32 +16,13 @@ export const metadata = {
 export default function ReverencePage() {
   return (
     <main>
-      {/* --- Hero --- */}
-      <div style={{ position: 'relative', height: 360, overflow: 'hidden' }}>
-        <Image
-          src="/events/reverence/hero.jpg"
-          alt="Reverence worship night"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center 25%' }}
-          priority
-        />
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(180deg, rgba(6,28,74,0.35), rgba(6,28,74,0.85))',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-            padding: 40,
-          }}
-        >
-          <h1 style={{ color: '#fff', fontSize: 34 }}>Reverence</h1>
-          <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5, maxWidth: 560 }}>
-            An annual worship gathering of Flaming Evangelical Ministries, directing worship to the Lord.
-          </p>
-        </div>
-      </div>
+      <Breadcrumbs items={[{ label: 'Events', href: '/events' }, { label: 'Reverence' }]} />
+      <PageMasthead
+        eyebrow="Flaming Evangelical Ministries International"
+        title="Reverence"
+        description="An annual worship gathering of Flaming Evangelical Ministries, directing worship to the Lord."
+        image={{ src: '/events/reverence/hero.jpg', alt: 'Worship gathering at Reverence', position: 'center 25%' }}
+      />
 
       {/* --- Quick nav --- */}
       <div style={{ background: 'var(--navy-deep)', display: 'flex', gap: 24, padding: '14px 40px', flexWrap: 'wrap' }}>
@@ -147,6 +131,12 @@ export default function ReverencePage() {
           keepsakes will appear here once available.
         </div>
       </div>
+      <RelatedContent
+        items={[
+          { href: '/events', title: 'Church Events', description: 'Return to the church-wide events page and featured gatherings.', action: 'Browse events' },
+          { href: '/sermons', title: 'Watch & Listen', description: 'Find church services and messages on the existing media destinations.', action: 'Explore messages' },
+        ]}
+      />
     </main>
   )
 }
@@ -154,7 +144,7 @@ export default function ReverencePage() {
 function GalleryImage({ src, alt }: { src: string; alt: string }) {
   return (
     <div style={{ position: 'relative', width: '100%', paddingTop: '125%', borderRadius: 'var(--radius)', overflow: 'hidden' }}>
-      <Image src={src} alt={alt} fill sizes="(max-width: 700px) 33vw, 360px" style={{ objectFit: 'cover' }} />
+      <Image src={src} alt={alt} fill sizes="(max-width: 700px) 50vw, 360px" style={{ objectFit: 'cover' }} />
     </div>
   )
 }

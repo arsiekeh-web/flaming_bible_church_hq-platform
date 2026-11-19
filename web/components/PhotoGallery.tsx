@@ -78,6 +78,7 @@ export default function PhotoGallery({ photos, alt }: { photos: string[]; alt: s
               alt={alt}
               width={1200}
               height={1200}
+              sizes="(max-width: 948px) calc(100vw - 48px), 900px"
               style={{ width: '100%', height: 'auto', maxHeight: '85vh', objectFit: 'contain', borderRadius: 6 }}
             />
           </div>

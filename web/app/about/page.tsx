@@ -1,7 +1,8 @@
-import Link from 'next/link'
 import { LeaderCard } from '@/components/LeaderModal'
 import { LEADERS } from '@/lib/leaders'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import PageMasthead from '@/components/PageMasthead'
+import RelatedContent from '@/components/RelatedContent'
 
 export const metadata = {
   title: 'About Us',
@@ -13,12 +14,11 @@ export default function AboutPage() {
   return (
     <main>
       <Breadcrumbs items={[{ label: 'About' }]} />
-      <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px' }}>
-        <h1 style={{ color: '#fff', fontSize: 30 }}>About Us</h1>
-        <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5, maxWidth: 640 }}>
-          Flaming Bible Church HQ, in Ascension Town, Freetown, Sierra Leone.
-        </p>
-      </div>
+      <PageMasthead
+        eyebrow="Our church"
+        title="About Us"
+        description="Flaming Bible Church HQ, in Ascension Town, Freetown, Sierra Leone."
+      />
 
       {/* --- About the Church --- */}
       <div className="section">
@@ -98,18 +98,12 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* --- Related --- */}
-      <div className="section" style={{ paddingTop: 0, display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-        <Link href="/sermons" style={{ color: 'var(--navy)', fontWeight: 600, fontSize: 14 }}>
-          Watch a recent service →
-        </Link>
-        <Link href="/events" style={{ color: 'var(--navy)', fontWeight: 600, fontSize: 14 }}>
-          See upcoming events →
-        </Link>
-        <Link href="/fellowship" style={{ color: 'var(--navy)', fontWeight: 600, fontSize: 14 }}>
-          Explore our Fellowship (YDY) →
-        </Link>
-      </div>
+      <RelatedContent
+        items={[
+          { href: '/sermons', title: 'Watch & Listen', description: 'Find the church’s existing Facebook and YouTube destinations.', action: 'Explore messages' },
+          { href: '/fellowship', title: 'Young Dynamic Youth Fellowship', description: 'Learn about YDY, its coordinators, and fellowship activities.', action: 'Explore YDY' },
+        ]}
+      />
     </main>
   )
 }

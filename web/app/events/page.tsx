@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import PageMasthead from '@/components/PageMasthead'
+import RelatedContent from '@/components/RelatedContent'
 
 export const metadata = {
   title: 'Events',
@@ -21,12 +23,11 @@ export default function EventsPage() {
   return (
     <main>
       <Breadcrumbs items={[{ label: 'Events' }]} />
-      <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px' }}>
-        <h1 style={{ color: '#fff', fontSize: 30 }}>Events</h1>
-        <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5 }}>
-          Church events, crusades, and worship nights at Flaming Bible Church HQ in Freetown, Sierra Leone.
-        </p>
-      </div>
+      <PageMasthead
+        eyebrow="Church gatherings"
+        title="Events"
+        description="Church events, crusades, and worship nights at Flaming Bible Church HQ in Freetown, Sierra Leone."
+      />
 
       <div className="section" style={{ paddingBottom: 0 }}>
         <Link href="/events/reverence" className="card" style={{ display: 'flex', gap: 20, padding: 20, alignItems: 'center', marginBottom: 8 }}>
@@ -60,6 +61,12 @@ export default function EventsPage() {
           </div>
         )}
       </div>
+      <RelatedContent
+        items={[
+          { href: '/about', title: 'About the Church', description: 'Learn about Flaming Bible Church HQ and its leadership.', action: 'Meet the church' },
+          { href: '/sermons', title: 'Watch & Listen', description: 'Find the church’s existing Facebook and YouTube destinations.', action: 'Explore messages' },
+        ]}
+      />
     </main>
   )
 }

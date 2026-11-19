@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { LeaderCard } from '@/components/LeaderModal'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import PageMasthead from '@/components/PageMasthead'
+import RelatedContent from '@/components/RelatedContent'
 import PhotoGallery from '@/components/PhotoGallery'
 import VideoHighlight from '@/components/VideoHighlight'
 
@@ -208,32 +210,12 @@ export default function FellowshipPage({
   return (
     <main>
       <Breadcrumbs items={[{ label: 'Fellowship' }]} />
-      <div style={{ position: 'relative', minHeight: 260, overflow: 'hidden' }}>
-        <Image
-          src="/fellowship/ydy/hero.jpg"
-          alt="YDY fellowship members"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center 45%' }}
-          priority
-        />
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(135deg, rgba(122,15,38,0.82), rgba(6,28,74,0.85))',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-            padding: 48,
-          }}
-        >
-          <span className="pill pill-member" style={{ display: 'inline-block', width: 'fit-content' }}>
-            Fellowship
-          </span>
-          <h1 style={{ color: '#fff', fontSize: 30, margin: '10px 0 4px' }}>Young Dynamic Youth Fellowship (YDY)</h1>
-          <p style={{ color: '#cfd8ee', fontSize: 12.5 }}>Ascension Town Young Dynamic Youth Fellowship</p>
-        </div>
-      </div>
+      <PageMasthead
+        eyebrow="Fellowship · YDY"
+        title="Young Dynamic Youth Fellowship (YDY)"
+        description="Ascension Town Young Dynamic Youth Fellowship"
+        image={{ src: '/fellowship/ydy/hero.jpg', alt: 'Young Dynamic Youth Fellowship members', position: 'center 45%' }}
+      />
 
       <div className="section">
         <div style={{ display: 'flex', gap: 6, borderBottom: '2px solid var(--line)', marginBottom: 24, flexWrap: 'wrap' }}>
@@ -316,6 +298,12 @@ export default function FellowshipPage({
           </div>
         )}
       </div>
+      <RelatedContent
+        items={[
+          { href: '/about', title: 'About the Church', description: 'Learn about Flaming Bible Church HQ and its leadership.', action: 'Meet the church' },
+          { href: '/sermons', title: 'Watch & Listen', description: 'Find the church’s existing Facebook and YouTube destinations.', action: 'Explore messages' },
+        ]}
+      />
     </main>
   )
 }
@@ -430,7 +418,7 @@ function EventGroup({
                 {e.note && <p style={{ fontSize: 13, color: 'var(--gray)' }}>{e.note}</p>}
                 {e.photos && e.photos.length === 1 && (
                   <div style={{ position: 'relative', width: '100%', maxWidth: 280, marginTop: 12, borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.15)' }}>
-                    <Image src={e.photos[0]} alt={e.name} width={810} height={1080} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    <Image src={e.photos[0]} alt={e.name} width={810} height={1080} sizes="(max-width: 700px) 90vw, 280px" style={{ width: '100%', height: 'auto', display: 'block' }} />
                   </div>
                 )}
                 {e.photos && e.photos.length > 1 && (

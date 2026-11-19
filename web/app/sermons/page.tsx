@@ -1,4 +1,6 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
+import PageMasthead from '@/components/PageMasthead'
+import RelatedContent from '@/components/RelatedContent'
 
 export const metadata = {
   title: 'Watch & Listen',
@@ -10,15 +12,14 @@ export default function SermonsPage() {
   return (
     <main>
       <Breadcrumbs items={[{ label: 'Watch & Listen' }]} />
-      <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--navy-deep))', color: '#fff', padding: '48px' }}>
-        <h1 style={{ color: '#fff', fontSize: 30 }}>Watch & Listen</h1>
-        <p style={{ color: '#cfd8ee', marginTop: 8, fontSize: 14.5, maxWidth: 560 }}>
-          Watch live church services and sermons from Flaming Bible Church HQ, Freetown, Sierra Leone. Services stream live and stay available afterward on our Facebook page and YouTube channel.
-        </p>
-      </div>
+      <PageMasthead
+        eyebrow="Messages and services"
+        title="Watch & Listen"
+        description="Watch live church services and sermons from Flaming Bible Church HQ, Freetown, Sierra Leone. Services stream live and stay available afterward on our Facebook page and YouTube channel."
+      />
 
       <div className="section">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 22, maxWidth: 720 }}>
+        <div className="watch-destinations-grid">
           <a
             href="https://www.facebook.com/share/1C8zu2wYax/"
             target="_blank"
@@ -52,6 +53,12 @@ export default function SermonsPage() {
           Both links open in a new tab. Follow or subscribe to be notified when we go live.
         </p>
       </div>
+      <RelatedContent
+        items={[
+          { href: '/events', title: 'Church Events', description: 'Explore church-wide gatherings and featured events.', action: 'Browse events' },
+          { href: '/about', title: 'About the Church', description: 'Learn about Flaming Bible Church HQ and its leadership.', action: 'Meet the church' },
+        ]}
+      />
     </main>
   )
 }
